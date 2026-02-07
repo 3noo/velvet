@@ -1014,192 +1014,105 @@ textarea {
   background: rgba(255, 45, 85, 0.08);
 }
 
-/* Contact spectacle (interactive, chic) */
-.card--seal {
+/* Contact mosaic (lightweight, chic) */
+.card--mosaic {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-
-  /* Defaults for no-JS / first paint */
-  --seal-x: 0.5;
-  --seal-y: 0.5;
-  --seal-dx: 0;
-  --seal-dy: 0;
-
   background: rgba(255, 253, 247, 0.78);
-  box-shadow:
-    calc(var(--seal-dx) * -14px) calc(var(--seal-dy) * -14px) 70px rgba(18, 16, 14, 0.10),
-    0 18px 50px rgba(18, 16, 14, 0.06);
-  transition: box-shadow 180ms var(--ease-out);
 }
 
-.card--seal form {
+.card--mosaic form {
   position: relative;
   z-index: 2;
 }
 
-.card--seal input,
-.card--seal textarea,
-.card--seal select {
-  background: rgba(255, 253, 247, 0.88);
+.card--mosaic input,
+.card--mosaic textarea,
+.card--mosaic select {
+  background: rgba(255, 253, 247, 0.9);
 }
 
-.contact-seal {
+.card--mosaic::after {
+  content: "";
   position: absolute;
   inset: -1px;
   border-radius: var(--radius);
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
   opacity: 0;
-}
-
-.js .card--seal.is-visible .contact-seal,
-.js .card--seal[data-reveal].is-visible .contact-seal {
-  animation: sealIn 680ms var(--ease-out) 60ms both;
-}
-
-.contact-seal__tilt {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  transform: perspective(900px)
-    rotateX(calc(var(--seal-dy) * -10deg))
-    rotateY(calc(var(--seal-dx) * 10deg))
-    translate3d(calc(var(--seal-dx) * -10px), calc(var(--seal-dy) * -10px), 0);
-  transition: transform 180ms var(--ease-out);
-}
-
-.contact-seal__holo {
-  position: absolute;
-  inset: -35%;
-  border-radius: 999px;
   background:
-    radial-gradient(
-      900px 620px at calc(var(--seal-x) * 100%) calc(var(--seal-y) * 100%),
-      rgba(255, 45, 85, 0.34),
-      rgba(255, 45, 85, 0.06) 32%,
-      transparent 62%
-    ),
-    radial-gradient(
-      700px 520px at calc((1 - var(--seal-x)) * 100%) calc((1 - var(--seal-y)) * 100%),
-      rgba(11, 13, 18, 0.16),
-      transparent 60%
-    ),
-    conic-gradient(
-      from 220deg at 50% 50%,
-      rgba(255, 45, 85, 0.18),
-      rgba(255, 253, 247, 0) 40%,
-      rgba(11, 13, 18, 0.08) 62%,
-      rgba(255, 45, 85, 0.14) 88%,
-      rgba(255, 253, 247, 0)
-    );
-  filter: blur(18px) saturate(1.12);
-  opacity: 0.9;
-
-  /* Keep the glow local to a moving "lens" */
-  -webkit-mask-image: radial-gradient(
-    420px 420px at calc(var(--seal-x) * 100%) calc(var(--seal-y) * 100%),
-    rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0) 70%
-  );
-  mask-image: radial-gradient(
-    420px 420px at calc(var(--seal-x) * 100%) calc(var(--seal-y) * 100%),
-    rgba(0, 0, 0, 1),
-    rgba(0, 0, 0, 0) 70%
-  );
-  animation: sealSpin 16s linear infinite;
+    radial-gradient(540px 320px at 18% 0%, rgba(255, 45, 85, 0.14), transparent 70%),
+    radial-gradient(520px 300px at 88% 100%, rgba(11, 13, 18, 0.1), transparent 72%);
+  transition: opacity 180ms var(--ease-out);
 }
 
-.contact-seal__marks {
-  position: absolute;
-  inset: -18%;
-  opacity: 0.24;
-  mix-blend-mode: multiply;
-  filter: contrast(1.12) blur(0.25px);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect x='4.5' y='4.5' width='35' height='35' fill='none' stroke='rgba(11,13,18,0.22)' stroke-width='1.4'/%3E%3Cpath d='M13.5 14.2L22 31.8L30.5 14.2' fill='none' stroke='rgba(11,13,18,0.26)' stroke-width='1.8' stroke-linecap='square' stroke-linejoin='miter'/%3E%3Cpath d='M16 14.2H28' fill='none' stroke='rgba(255,45,85,0.22)' stroke-width='1.1' stroke-linecap='square'/%3E%3C/svg%3E");
-  background-size: 82px 82px;
-  background-repeat: repeat;
-  transform: translate3d(calc(var(--seal-dx) * 36px), calc(var(--seal-dy) * 36px), 0)
-    rotate(-2deg);
-  animation: marksDrift 22s linear infinite;
+.card--mosaic:hover::after,
+.card--mosaic:focus-within::after {
+  opacity: 1;
 }
 
-.contact-seal__grain {
+.contact-mosaic {
   position: absolute;
-  inset: 0;
-  opacity: 0.12;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
-  background-size: 180px 180px;
+  inset: -56px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.72;
 }
 
-.contact-seal__stroke {
-  position: absolute;
-  inset: 0;
-  width: 100%;
+.contact-mosaic__track {
   height: 100%;
-  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  transform: translate3d(0, 0, 0);
+  animation: mosaicDrift 26s linear infinite alternate;
+  will-change: transform;
 }
 
-.contact-seal__border {
-  fill: none;
-  stroke: rgba(11, 13, 18, 0.12);
-  stroke-width: 1.25;
-  vector-effect: non-scaling-stroke;
+.contact-mosaic__tile {
+  border: 1px solid rgba(11, 13, 18, 0.1);
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 4px;
+  padding: 12px 12px 11px;
 }
 
-.contact-seal__trace {
-  fill: none;
-  stroke: rgba(255, 45, 85, 0.62);
-  stroke-width: 1.65;
-  vector-effect: non-scaling-stroke;
-  stroke-linecap: square;
-  stroke-dasharray: 8 92;
-  animation: traceRun 2.6s linear infinite;
-  filter: drop-shadow(0 0 12px rgba(255, 45, 85, 0.18));
-  opacity: 0.32;
+.contact-mosaic__top {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(11, 13, 18, 0.55);
 }
 
-.card--seal[data-seal-active="true"] .contact-seal__trace {
-  opacity: 0.86;
+.contact-mosaic__bottom {
+  display: block;
+  margin-top: 8px;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(11, 13, 18, 0.32);
 }
 
-.card--seal[data-seal-burst="true"] .contact-seal__holo {
-  animation-duration: 9s;
-}
-
-.card--seal[data-seal-burst="true"] .contact-seal__trace {
-  stroke-dasharray: 16 84;
-}
-
-@keyframes sealIn {
+@keyframes mosaicDrift {
   from {
-    opacity: 0;
-    filter: blur(8px);
-    transform: scale(0.985);
+    transform: translate3d(0, 0, 0);
   }
   to {
-    opacity: 1;
-    filter: blur(0);
-    transform: scale(1);
+    transform: translate3d(-42px, 32px, 0);
   }
 }
 
-@keyframes sealSpin {
-  to {
-    transform: rotate(1turn);
+@media (min-width: 720px) {
+  .contact-mosaic__track {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
   }
 }
 
-@keyframes marksDrift {
-  to {
-    background-position: 520px 360px;
-  }
-}
-
-@keyframes traceRun {
-  to {
-    stroke-dashoffset: -100;
+@media (min-width: 980px) {
+  .contact-mosaic__track {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -1279,29 +1192,14 @@ body.is-leaving {
     transition: none;
   }
 
-  .contact-seal,
-  .contact-seal__holo,
-  .contact-seal__marks,
-  .contact-seal__trace {
+  .contact-mosaic__track {
     animation: none !important;
-    transition: none !important;
-  }
-
-  .contact-seal__tilt {
     transform: none !important;
+    will-change: auto;
   }
 
-  .card--seal .contact-seal {
-    opacity: 1;
-  }
-
-  .card--seal .contact-seal__holo {
-    opacity: 0.55;
-  }
-
-  .card--seal .contact-seal__trace {
-    opacity: 0.22;
-    stroke-dasharray: none;
+  .card--mosaic::after {
+    transition: none;
   }
 }
 

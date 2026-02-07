@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { ContactForm } from "@/app/contact/ContactForm";
-import { ContactSpectacle } from "@/app/contact/ContactSpectacle";
+import { ContactMosaic } from "@/app/contact/ContactMosaic";
 import { SmartImage } from "@/components/SmartImage";
 import { MEDIA, SITE } from "@/lib/site";
 
@@ -72,8 +72,8 @@ export default function ContactPage() {
             </ul>
           </div>
 
-          <div className="card card--seal" data-reveal data-reveal-delay="1">
-            <ContactSpectacle />
+          <div className="card card--mosaic" data-reveal data-reveal-delay="1">
+            <ContactMosaic />
             <ContactForm />
           </div>
         </div>
