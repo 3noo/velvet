@@ -26,9 +26,12 @@ export function ContactSpectacle() {
 
     const reduced = prefersReducedMotion();
     let raf = 0;
+    let running = false;
+    let inView = true;
     let active = false;
     let activeUntil = 0;
     let burstTimer: number | undefined;
+    let lastAuto = 0;
 
     const setVars = (x: number, y: number) => {
       const cx = clamp01(x);
@@ -95,15 +98,65 @@ export function ContactSpectacle() {
 
     if (!reduced) {
       const loop = (t: number) => {
-        // Autopilot motion unless the user is actively moving a pointer.
-        if (!active || t > activeUntil) {
+        if (!running) return;
+
+        // Autopilot motion (lightweight) unless the user is actively moving a pointer.
+        // Throttle updates to reduce main-thread churn on slower devices.
+        if ((!active || t > activeUntil) && t - lastAuto > 33) {
+          lastAuto = t;
           const x = 0.5 + Math.sin(t / 1400) * 0.22;
           const y = 0.5 + Math.cos(t / 1700) * 0.18;
           setVars(x, y);
         }
+
         raf = window.requestAnimationFrame(loop);
       };
-      raf = window.requestAnimationFrame(loop);
+
+      const start = () => {
+        if (running) return;
+        if (document.visibilityState !== "visible") return;
+        if (!inView) return;
+        running = true;
+        raf = window.requestAnimationFrame(loop);
+      };
+
+      const stop = () => {
+        running = false;
+        window.cancelAnimationFrame(raf);
+      };
+
+      const onVisibility = () => {
+        if (document.visibilityState !== "visible") stop();
+        else start();
+      };
+      document.addEventListener("visibilitychange", onVisibility);
+
+      let io: IntersectionObserver | null = null;
+      if (window.IntersectionObserver) {
+        io = new IntersectionObserver(
+          (entries) => {
+            inView = entries.some((e) => e.isIntersecting);
+            if (inView) start();
+            else stop();
+          },
+          { threshold: 0.1 }
+        );
+        io.observe(card);
+      }
+
+      start();
+
+      return () => {
+        stop();
+        io?.disconnect();
+        document.removeEventListener("visibilitychange", onVisibility);
+        window.clearTimeout(burstTimer);
+        card.removeEventListener("pointerenter", onEnter);
+        card.removeEventListener("pointerleave", onLeave);
+        card.removeEventListener("pointermove", onMove);
+        card.removeEventListener("pointerdown", onDown);
+        card.removeEventListener("focusin", onFocusIn);
+      };
     }
 
     return () => {
@@ -155,4 +208,3 @@ export function ContactSpectacle() {
     </div>
   );
 }
-
