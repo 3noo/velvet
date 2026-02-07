@@ -40,7 +40,14 @@ export function ClientEffects() {
         (entries) => {
           entries.forEach((ent) => {
             if (!ent.isIntersecting) return;
-            (ent.target as HTMLElement).classList.add("is-visible");
+            const el = ent.target as HTMLElement;
+            // Avoid leaving `will-change` on lots of elements (it can hurt scroll performance).
+            // Only hint it briefly while the reveal transition runs.
+            el.style.willChange = "transform, opacity";
+            el.classList.add("is-visible");
+            window.setTimeout(() => {
+              el.style.willChange = "";
+            }, 1000);
             io?.unobserve(ent.target);
           });
         },
@@ -94,4 +101,3 @@ export function ClientEffects() {
 
   return null;
 }
-
