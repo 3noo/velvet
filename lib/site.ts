@@ -25,7 +25,7 @@ export const MEDIA = {
   workReelPoster:
     "https://cdn.coverr.co/videos/coverr-teamwork-in-the-office-7943/thumbnail?width=1600",
   workReelMp4: "https://cdn.coverr.co/videos/coverr-teamwork-in-the-office-7943/720p.mp4",
-  aboutHero: u("https://images.unsplash.com/photo-1685551207595-1f25ecc702f0", 1400, 1600),
+  aboutHero: u("https://images.unsplash.com/photo-1624603225543-2ef7ffb11c8f", 1400, 1600),
   aboutBand: u("https://images.unsplash.com/photo-1751200065697-4461cc2b43cb", 2400, 1200),
   about2: u("https://images.unsplash.com/photo-1764755932155-dabbee87df7e", 1400, 1600),
   contactHero: u("https://images.unsplash.com/photo-1747336754882-dfa5c49f15da", 1400, 1600),
