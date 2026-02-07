@@ -303,6 +303,7 @@ summary:focus-visible {
   z-index: 40;
   background: rgba(246, 241, 232, 0.82);
   border-bottom: 1px solid var(--line);
+  box-shadow: 0 12px 30px rgba(11, 13, 18, 0.04);
 }
 
 .nav {
@@ -1248,21 +1249,6 @@ textarea {
 .js [data-reveal].is-visible {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-}
-
-@media (min-width: 900px) {
-  body::after {
-    opacity: 0.09;
-    mix-blend-mode: multiply;
-  }
-
-  .site-header {
-    backdrop-filter: blur(10px);
-  }
-
-  .nav__panel {
-    backdrop-filter: blur(12px);
-  }
 }
 
 body.is-leaving {
