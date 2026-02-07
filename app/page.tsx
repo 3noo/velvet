@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { SmartImage } from "@/components/SmartImage";
 import { MEDIA } from "@/lib/site";
 
 export default function HomePage() {
@@ -123,7 +124,12 @@ export default function HomePage() {
           <div className="gallery" data-reveal data-reveal-delay="2">
             {MEDIA.gallery.map((src, idx) => (
               <div key={`${src}-${idx}`} className="gallery__item">
-                <img src={src} alt="" loading="lazy" decoding="async" />
+                <SmartImage
+                  src={src}
+                  alt=""
+                  sizes="(max-width: 719px) 50vw, (max-width: 979px) 33vw, 16vw"
+                  maxWidth={1200}
+                />
               </div>
             ))}
           </div>
@@ -132,7 +138,7 @@ export default function HomePage() {
 
       <section className="band">
         <div className="band__media" aria-hidden="true">
-          <img src={MEDIA.band} alt="" loading="lazy" decoding="async" />
+          <SmartImage src={MEDIA.band} alt="" sizes="100vw" />
         </div>
         <div className="band__shade" aria-hidden="true"></div>
 
@@ -198,11 +204,11 @@ export default function HomePage() {
           <div className="work-grid">
             <Link className="work-card" href="/work#maison-hart" data-reveal>
               <div className="work-card__media">
-                <img
+                <SmartImage
                   src={MEDIA.gallery[0]}
                   alt=""
-                  loading="lazy"
-                  decoding="async"
+                  sizes="(max-width: 719px) 100vw, (max-width: 979px) 50vw, 33vw"
+                  maxWidth={1600}
                 />
               </div>
               <div className="work-card__body">
@@ -219,11 +225,11 @@ export default function HomePage() {
               data-reveal-delay="1"
             >
               <div className="work-card__media">
-                <img
+                <SmartImage
                   src={MEDIA.gallery[1]}
                   alt=""
-                  loading="lazy"
-                  decoding="async"
+                  sizes="(max-width: 719px) 100vw, (max-width: 979px) 50vw, 33vw"
+                  maxWidth={1600}
                 />
               </div>
               <div className="work-card__body">
@@ -240,11 +246,11 @@ export default function HomePage() {
               data-reveal-delay="2"
             >
               <div className="work-card__media">
-                <img
+                <SmartImage
                   src={MEDIA.gallery[2]}
                   alt=""
-                  loading="lazy"
-                  decoding="async"
+                  sizes="(max-width: 719px) 100vw, (max-width: 979px) 50vw, 33vw"
+                  maxWidth={1600}
                 />
               </div>
               <div className="work-card__body">

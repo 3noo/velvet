@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { ContactForm } from "@/app/contact/ContactForm";
 import { ContactSpectacle } from "@/app/contact/ContactSpectacle";
+import { SmartImage } from "@/components/SmartImage";
 import { MEDIA, SITE } from "@/lib/site";
 
 export const metadata = {
@@ -43,7 +44,12 @@ export default function ContactPage() {
           </div>
 
           <div className="media-frame" data-reveal data-reveal-delay="1">
-            <img src={MEDIA.contactHero} alt="" loading="lazy" decoding="async" />
+            <SmartImage
+              src={MEDIA.contactHero}
+              alt=""
+              sizes="(max-width: 979px) 100vw, 45vw"
+              maxWidth={1600}
+            />
           </div>
         </div>
       </section>

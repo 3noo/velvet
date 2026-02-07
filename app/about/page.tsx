@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { SmartImage } from "@/components/SmartImage";
 import { MEDIA } from "@/lib/site";
 
 export const metadata = {
@@ -44,7 +45,12 @@ export default function AboutPage() {
           </div>
 
           <div className="media-frame" data-reveal data-reveal-delay="1">
-            <img src={MEDIA.aboutHero} alt="" loading="lazy" decoding="async" />
+            <SmartImage
+              src={MEDIA.aboutHero}
+              alt=""
+              sizes="(max-width: 979px) 100vw, 45vw"
+              maxWidth={1600}
+            />
           </div>
         </div>
       </section>
@@ -117,7 +123,12 @@ export default function AboutPage() {
           <div className="gallery gallery--tight" data-reveal data-reveal-delay="2">
             {MEDIA.gallery.slice(0, 4).map((src, idx) => (
               <div key={`${src}-${idx}`} className="gallery__item">
-                <img src={src} alt="" loading="lazy" decoding="async" />
+                <SmartImage
+                  src={src}
+                  alt=""
+                  sizes="(max-width: 719px) 50vw, (max-width: 979px) 33vw, 25vw"
+                  maxWidth={1200}
+                />
               </div>
             ))}
           </div>
@@ -126,7 +137,7 @@ export default function AboutPage() {
 
       <section className="band">
         <div className="band__media" aria-hidden="true">
-          <img src={MEDIA.aboutBand} alt="" loading="lazy" decoding="async" />
+          <SmartImage src={MEDIA.aboutBand} alt="" sizes="100vw" />
         </div>
         <div className="band__shade" aria-hidden="true"></div>
 
@@ -185,7 +196,12 @@ export default function AboutPage() {
             data-reveal-delay="1"
             aria-hidden="true"
           >
-            <img src={MEDIA.about2} alt="" loading="lazy" decoding="async" />
+            <SmartImage
+              src={MEDIA.about2}
+              alt=""
+              sizes="(max-width: 979px) 100vw, 45vw"
+              maxWidth={1600}
+            />
           </div>
         </div>
       </section>

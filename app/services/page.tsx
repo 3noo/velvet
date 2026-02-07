@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { Faq } from "@/app/services/Faq";
+import { SmartImage } from "@/components/SmartImage";
 import { MEDIA } from "@/lib/site";
 
 export const metadata = {
@@ -42,7 +43,12 @@ export default function ServicesPage() {
           </div>
 
           <div className="media-frame" data-reveal data-reveal-delay="1">
-            <img src={MEDIA.services} alt="" loading="lazy" decoding="async" />
+            <SmartImage
+              src={MEDIA.services}
+              alt=""
+              sizes="(max-width: 979px) 100vw, 45vw"
+              maxWidth={1600}
+            />
           </div>
         </div>
       </section>
@@ -134,7 +140,12 @@ export default function ServicesPage() {
             data-reveal-delay="1"
             aria-hidden="true"
           >
-            <img src={MEDIA.services2} alt="" loading="lazy" decoding="async" />
+            <SmartImage
+              src={MEDIA.services2}
+              alt=""
+              sizes="(max-width: 979px) 100vw, 45vw"
+              maxWidth={1600}
+            />
           </div>
         </div>
       </section>

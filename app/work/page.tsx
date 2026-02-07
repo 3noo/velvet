@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { SmartImage } from "@/components/SmartImage";
 import { MEDIA } from "@/lib/site";
 
 export const metadata = {
@@ -33,7 +34,12 @@ export default function WorkPage() {
           </div>
 
           <div className="media-frame" data-reveal data-reveal-delay="1">
-            <img src={MEDIA.workHero} alt="" loading="lazy" decoding="async" />
+            <SmartImage
+              src={MEDIA.workHero}
+              alt=""
+              sizes="(max-width: 979px) 100vw, 45vw"
+              maxWidth={1600}
+            />
           </div>
         </div>
       </section>
@@ -83,11 +89,11 @@ export default function WorkPage() {
             <details className="case" id="maison-hart" data-reveal>
               <summary>
                 <div className="media-frame thumb" aria-hidden="true">
-                  <img
+                  <SmartImage
                     src={MEDIA.gallery[0]}
                     alt=""
-                    loading="lazy"
-                    decoding="async"
+                    sizes="(max-width: 860px) 100vw, 40vw"
+                    maxWidth={1600}
                   />
                 </div>
                 <div className="case__title">
@@ -134,11 +140,11 @@ export default function WorkPage() {
             >
               <summary>
                 <div className="media-frame thumb" aria-hidden="true">
-                  <img
+                  <SmartImage
                     src={MEDIA.gallery[1]}
                     alt=""
-                    loading="lazy"
-                    decoding="async"
+                    sizes="(max-width: 860px) 100vw, 40vw"
+                    maxWidth={1600}
                   />
                 </div>
                 <div className="case__title">
@@ -185,11 +191,11 @@ export default function WorkPage() {
             >
               <summary>
                 <div className="media-frame thumb" aria-hidden="true">
-                  <img
+                  <SmartImage
                     src={MEDIA.gallery[2]}
                     alt=""
-                    loading="lazy"
-                    decoding="async"
+                    sizes="(max-width: 860px) 100vw, 40vw"
+                    maxWidth={1600}
                   />
                 </div>
                 <div className="case__title">
@@ -230,11 +236,11 @@ export default function WorkPage() {
             <details className="case" id="northfield-counsel" data-reveal>
               <summary>
                 <div className="media-frame thumb" aria-hidden="true">
-                  <img
+                  <SmartImage
                     src={MEDIA.gallery[3]}
                     alt=""
-                    loading="lazy"
-                    decoding="async"
+                    sizes="(max-width: 860px) 100vw, 40vw"
+                    maxWidth={1600}
                   />
                 </div>
                 <div className="case__title">
@@ -281,11 +287,11 @@ export default function WorkPage() {
             >
               <summary>
                 <div className="media-frame thumb" aria-hidden="true">
-                  <img
+                  <SmartImage
                     src={MEDIA.gallery[4]}
                     alt=""
-                    loading="lazy"
-                    decoding="async"
+                    sizes="(max-width: 860px) 100vw, 40vw"
+                    maxWidth={1600}
                   />
                 </div>
                 <div className="case__title">
@@ -331,11 +337,11 @@ export default function WorkPage() {
             >
               <summary>
                 <div className="media-frame thumb" aria-hidden="true">
-                  <img
+                  <SmartImage
                     src={MEDIA.gallery[5]}
                     alt=""
-                    loading="lazy"
-                    decoding="async"
+                    sizes="(max-width: 860px) 100vw, 40vw"
+                    maxWidth={1600}
                   />
                 </div>
                 <div className="case__title">
