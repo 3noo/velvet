@@ -65,8 +65,7 @@ export default function WorkPage() {
           </div>
 
           <div className="media-frame media-frame--video" data-reveal data-reveal-delay="1">
-            <video controls playsInline preload="none" poster={MEDIA.workHero}>
-              <source src={MEDIA.workReelWebm} type="video/webm" />
+            <video controls playsInline preload="none" poster={MEDIA.workReelPoster}>
               <source src={MEDIA.workReelMp4} type="video/mp4" />
             </video>
           </div>

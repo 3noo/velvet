@@ -23,8 +23,9 @@ export const MEDIA = {
   services: u("https://images.unsplash.com/photo-1750306955715-85fdf631bd0b", 1400, 1600),
   services2: u("https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00", 1400, 1600),
   workHero: u("https://images.unsplash.com/photo-1759986452774-be47f7db2362", 1400, 1600),
-  workReelMp4: "https://media.w3.org/2010/05/sintel/trailer.mp4",
-  workReelWebm: "https://media.w3.org/2010/05/sintel/trailer.webm",
+  workReelPoster:
+    "https://cdn.coverr.co/videos/coverr-teamwork-in-the-office-7943/thumbnail?width=1600",
+  workReelMp4: "https://cdn.coverr.co/videos/coverr-teamwork-in-the-office-7943/720p.mp4",
   aboutHero: u("https://images.unsplash.com/photo-1685551207595-1f25ecc702f0", 1400, 1600),
   aboutBand: u("https://images.unsplash.com/photo-1751200065697-4461cc2b43cb", 2400, 1200),
   about2: u("https://images.unsplash.com/photo-1764755932155-dabbee87df7e", 1400, 1600),
