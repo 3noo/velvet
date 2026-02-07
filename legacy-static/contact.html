@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Contact Arc + Finch Studio. Start a project or book a call." />
+    <meta name="theme-color" content="#151311" />
+    <title>Contact | Arc + Finch Studio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Onest:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="index.html" aria-label="Arc and Finch Studio home">
+          <img class="brand__mark" src="assets/img/mark.svg" alt="" aria-hidden="true" />
+          <span class="brand__word">
+            <span class="brand__name">Arc + Finch</span>
+            <span class="brand__tag">Marketing Studio</span>
+          </span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-controls="nav-panel"
+          aria-expanded="false"
+          data-nav-toggle
+        >
+          Menu
+        </button>
+
+        <nav class="nav__panel" id="nav-panel" data-nav-panel data-open="false" aria-label="Primary">
+          <a href="services.html" data-nav>Services</a>
+          <a href="work.html" data-nav>Work</a>
+          <a href="about.html" data-nav>About</a>
+          <a href="contact.html" data-nav>Contact</a>
+          <a class="btn btn--primary" href="contact.html">Book a Call</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="section">
+        <div class="container two-col">
+          <div class="stack">
+            <p class="kicker" data-reveal>Contact</p>
+            <h1 class="display" data-reveal data-reveal-delay="1">Let's build something precise.</h1>
+            <p class="lede" data-reveal data-reveal-delay="2">
+              Send the basics: what you sell, what's not working, and what a win looks like. I'll reply with a tight
+              scope and a timeline.
+            </p>
+
+            <div class="divider" aria-hidden="true"></div>
+
+            <div class="stack" data-reveal data-reveal-delay="3">
+              <p class="kicker">Email</p>
+              <a class="link" href="mailto:hello@arcfinch.studio" data-no-transition>hello@arcfinch.studio</a>
+              <p class="kicker mt-18">Availability</p>
+              <p class="small muted">Booking new projects from March 2026.</p>
+            </div>
+          </div>
+
+          <div class="media-frame" data-reveal data-reveal-delay="1">
+            <img src="https://source.unsplash.com/RZTOVucRhos/1400x1600" alt="" loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--paper">
+        <div class="container two-col">
+          <div class="stack">
+            <h2 class="h2" data-reveal>Project details</h2>
+            <p class="muted" data-reveal data-reveal-delay="1">
+              This is a demo form (no backend). The UX is ready; connect a form service when you go live.
+            </p>
+            <div class="divider" aria-hidden="true"></div>
+            <ul class="ticks" data-reveal data-reveal-delay="2">
+              <li>Preferred package: identity, web, campaign</li>
+              <li>Timeline: ideal launch date</li>
+              <li>Budget range: helps keep scope honest</li>
+            </ul>
+          </div>
+
+          <div class="card" data-reveal data-reveal-delay="1">
+            <form data-contact-form>
+              <label>
+                Name
+                <input name="name" autocomplete="name" required />
+              </label>
+
+              <label>
+                Email
+                <input name="email" type="email" autocomplete="email" required />
+              </label>
+
+              <label>
+                Project type
+                <select name="type" required>
+                  <option value="" selected disabled>Select one</option>
+                  <option>Identity Sprint</option>
+                  <option>Website Build</option>
+                  <option>Campaign Kit</option>
+                  <option>Not sure yet</option>
+                </select>
+              </label>
+
+              <label>
+                Budget
+                <select name="budget" required>
+                  <option value="" selected disabled>Select one</option>
+                  <option>$2k - $5k</option>
+                  <option>$5k - $10k</option>
+                  <option>$10k+</option>
+                  <option>Prefer not to say</option>
+                </select>
+              </label>
+
+              <label>
+                Message
+                <textarea name="message" required placeholder="Link your current site and describe the goal."></textarea>
+              </label>
+
+              <button class="btn btn--primary" type="submit">Send</button>
+
+              <div class="form-status" data-form-status aria-live="polite">
+                Tip: if you want this form to actually send, connect Formspree, Netlify Forms, or a simple backend.
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="container cta__inner" data-reveal>
+          <h2 class="h2 h2--light">Prefer email?</h2>
+          <p>Send a short note with your link and your goal. You'll get a structured reply, not a sales sequence.</p>
+          <div class="cta__actions">
+            <a class="btn btn--light" href="mailto:hello@arcfinch.studio" data-no-transition>Email</a>
+            <a class="btn btn--ghostlight" href="services.html">Packages</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="stack">
+          <a class="brand" href="index.html">
+            <img class="brand__mark" src="assets/img/mark.svg" alt="" aria-hidden="true" />
+            <span class="brand__word">
+              <span class="brand__name">Arc + Finch</span>
+              <span class="brand__tag">Marketing Studio</span>
+            </span>
+          </a>
+          <p class="small muted">A demo contact page with a clean, structured form layout.</p>
+        </div>
+
+        <div class="footer-links" aria-label="Footer navigation">
+          <a href="services.html">Services</a>
+          <a href="work.html">Work</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="stack">
+          <p class="kicker">Get in touch</p>
+          <a class="link" href="mailto:hello@arcfinch.studio" data-no-transition>hello@arcfinch.studio</a>
+          <p class="small muted">Photos via Unsplash (demo).</p>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p class="small muted">© <span data-year></span> Arc + Finch Studio. Demo build.</p>
+        <p class="small muted">Contact page.</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>

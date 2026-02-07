@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44" fill="none">
+  <rect x="4.5" y="4.5" width="35" height="35" stroke="currentColor" stroke-width="1.4" />
+  <path
+    d="M13.5 14.2L22 31.8L30.5 14.2"
+    stroke="currentColor"
+    stroke-width="1.8"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+  />
+  <path
+    d="M16 14.2H28"
+    stroke="currentColor"
+    stroke-width="1.1"
+    stroke-linecap="square"
+  />
+</svg>
+

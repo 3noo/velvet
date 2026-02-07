@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="About Arc + Finch Studio: a small marketing studio focused on typography, clarity, and performance." />
+    <meta name="theme-color" content="#151311" />
+    <title>About | Arc + Finch Studio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Onest:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="index.html" aria-label="Arc and Finch Studio home">
+          <img class="brand__mark" src="assets/img/mark.svg" alt="" aria-hidden="true" />
+          <span class="brand__word">
+            <span class="brand__name">Arc + Finch</span>
+            <span class="brand__tag">Marketing Studio</span>
+          </span>
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-controls="nav-panel"
+          aria-expanded="false"
+          data-nav-toggle
+        >
+          Menu
+        </button>
+
+        <nav class="nav__panel" id="nav-panel" data-nav-panel data-open="false" aria-label="Primary">
+          <a href="services.html" data-nav>Services</a>
+          <a href="work.html" data-nav>Work</a>
+          <a href="about.html" data-nav>About</a>
+          <a href="contact.html" data-nav>Contact</a>
+          <a class="btn btn--primary" href="contact.html">Book a Call</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content">
+      <section class="section">
+        <div class="container two-col">
+          <div class="stack">
+            <p class="kicker" data-reveal>About</p>
+            <h1 class="display" data-reveal data-reveal-delay="1">Small studio. Strict taste. Fast execution.</h1>
+            <p class="lede" data-reveal data-reveal-delay="2">
+              Arc + Finch is built for founders who want marketing that reads like craft, not hype. We focus on clear
+              hierarchy, elegant type, and performance that makes everything feel more premium.
+            </p>
+
+            <div class="divider" aria-hidden="true"></div>
+
+            <div class="stack" data-reveal data-reveal-delay="3">
+              <p class="small muted">
+                The easiest way to make a site feel expensive is to cut everything that doesn't matter, then perfect
+                what's left: type scale, spacing, motion, and proof.
+              </p>
+              <div class="hero__actions">
+                <a class="btn btn--primary" href="services.html">How we help</a>
+                <a class="btn" href="contact.html">Start a project</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="media-frame" data-reveal data-reveal-delay="1">
+            <img src="https://source.unsplash.com/1qyKiF1iVkQ/1400x1600" alt="" loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--paper">
+        <div class="container">
+          <div class="section-head">
+            <h2 class="h2" data-reveal>Principles</h2>
+            <p class="muted" data-reveal data-reveal-delay="1">A simple standard for every build.</p>
+          </div>
+
+          <div class="cards-3">
+            <article class="card" data-reveal>
+              <h3 class="h3">Clarity beats clever</h3>
+              <p>We write and design so a first-time visitor can understand the offer in seconds.</p>
+              <ul class="ticks">
+                <li>One primary CTA per section</li>
+                <li>Proof close to the claim</li>
+                <li>Fewer words, better words</li>
+              </ul>
+            </article>
+
+            <article class="card" data-reveal data-reveal-delay="1">
+              <h3 class="h3">Type is the brand</h3>
+              <p>Typography and spacing do the heavy lifting. Images support, they don't rescue.</p>
+              <ul class="ticks">
+                <li>Consistent scale + rhythm</li>
+                <li>Editorial hierarchy</li>
+                <li>Subtle, purposeful motion</li>
+              </ul>
+            </article>
+
+            <article class="card" data-reveal data-reveal-delay="2">
+              <h3 class="h3">Performance is a feature</h3>
+              <p>Fast feels premium. We keep the codebase small and the interactions snappy.</p>
+              <ul class="ticks">
+                <li>Lazy loading by default</li>
+                <li>Accessible interactions</li>
+                <li>Clean static delivery</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="band">
+        <div class="band__media" aria-hidden="true">
+          <img src="https://source.unsplash.com/IUKdnYUlDco/2400x1200" alt="" loading="lazy" decoding="async" />
+        </div>
+        <div class="band__shade" aria-hidden="true"></div>
+
+        <div class="container band__content">
+          <p class="kicker" data-reveal>ON PURPOSE</p>
+          <h2 class="h2 h2--light" data-reveal data-reveal-delay="1">Quiet brands still need sharp structure.</h2>
+          <p class="lede lede--light" data-reveal data-reveal-delay="2">
+            We keep the visuals restrained so the message can land. When the hierarchy is clean, people feel guided
+            instead of pushed.
+          </p>
+          <div class="hero__actions" data-reveal data-reveal-delay="3">
+            <a class="btn btn--light" href="work.html">See examples</a>
+            <a class="btn btn--ghostlight" href="contact.html">Book a call</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container two-col">
+          <div class="stack">
+            <h2 class="h2" data-reveal>What you get</h2>
+            <p class="muted" data-reveal data-reveal-delay="1">
+              A tidy system you can maintain: components, spacing rules, and copy patterns that scale.
+            </p>
+
+            <div class="divider" aria-hidden="true"></div>
+
+            <div class="stack" data-reveal data-reveal-delay="2">
+              <p class="small">
+                <strong>Deliverables vary by package</strong>, but every project ships with a simple handoff: what was
+                built, why it works, and what to measure next.
+              </p>
+              <ul class="ticks">
+                <li>Copy structure: headline, proof, CTA</li>
+                <li>Design tokens: type, color, spacing</li>
+                <li>Templates for repeating sections</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="media-frame" data-reveal data-reveal-delay="1" aria-hidden="true">
+            <img src="https://source.unsplash.com/ohxs8oPgQ9k/1400x1600" alt="" loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="container cta__inner" data-reveal>
+          <h2 class="h2 h2--light">If this feels like your taste</h2>
+          <p>Send your current site and your goals. I'll reply with a tight scope and a clear next step.</p>
+          <div class="cta__actions">
+            <a class="btn btn--light" href="contact.html">Contact</a>
+            <a class="btn btn--ghostlight" href="services.html">Packages</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="stack">
+          <a class="brand" href="index.html">
+            <img class="brand__mark" src="assets/img/mark.svg" alt="" aria-hidden="true" />
+            <span class="brand__word">
+              <span class="brand__name">Arc + Finch</span>
+              <span class="brand__tag">Marketing Studio</span>
+            </span>
+          </a>
+          <p class="small muted">A demo about page with editorial structure and quick motion.</p>
+        </div>
+
+        <div class="footer-links" aria-label="Footer navigation">
+          <a href="services.html">Services</a>
+          <a href="work.html">Work</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="stack">
+          <p class="kicker">Get in touch</p>
+          <a class="link" href="mailto:hello@arcfinch.studio" data-no-transition>hello@arcfinch.studio</a>
+          <p class="small muted">Photos via Unsplash (demo).</p>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p class="small muted">© <span data-year></span> Arc + Finch Studio. Demo build.</p>
+        <p class="small muted">About page.</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>
