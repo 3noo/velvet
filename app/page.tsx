@@ -129,6 +129,8 @@ export default function HomePage() {
                   alt=""
                   sizes="(max-width: 719px) 50vw, (max-width: 979px) 33vw, 16vw"
                   maxWidth={1200}
+                  loading={idx < 2 ? "eager" : "lazy"}
+                  fetchPriority={idx < 2 ? "high" : "low"}
                 />
               </div>
             ))}
