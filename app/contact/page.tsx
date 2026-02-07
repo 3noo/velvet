@@ -38,8 +38,8 @@ export default function ContactPage() {
                 {SITE.email}
               </a>
               <p className="small muted">Barcelona HQ · CET/CEST</p>
-              <p className="kicker mt-18">Availability</p>
-              <p className="small muted">{SITE.bookingNote}</p>
+              <p className="kicker mt-18">Response</p>
+              <p className="small muted">Typically within 1-2 business days.</p>
             </div>
           </div>
 

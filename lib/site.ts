@@ -2,8 +2,7 @@ export const SITE = {
   name: "Velvet",
   fullName: "Velvet Studio",
   tagline: "Barcelona",
-  email: "hello@velvet.studio",
-  bookingNote: "Booking new projects from March 2026. Barcelona-based, working worldwide."
+  email: "hello@velvet.studio"
 } as const;
 
 export const NAV = [
@@ -31,11 +30,11 @@ export const MEDIA = {
   about2: u("https://images.unsplash.com/photo-1764755932155-dabbee87df7e", 1400, 1600),
   contactHero: u("https://images.unsplash.com/photo-1747336754882-dfa5c49f15da", 1400, 1600),
   gallery: [
-    u("https://images.unsplash.com/photo-1762755815418-914fd0250de5", 1600, 1200),
-    u("https://images.unsplash.com/photo-1743300873236-39e755465c7a", 1600, 1200),
-    u("https://images.unsplash.com/photo-1764755932155-dabbee87df7e", 1600, 1200),
-    u("https://images.unsplash.com/photo-1768836180167-6d4a25c421b2", 1600, 1200),
-    u("https://images.unsplash.com/photo-1446688568582-55ddb4b37cad", 1600, 1200),
-    u("https://images.unsplash.com/photo-1750306955715-85fdf631bd0b", 1600, 1200)
+    u("https://images.unsplash.com/photo-1531496635011-06e2870a6722", 1600, 1200),
+    u("https://images.unsplash.com/photo-1590650423710-ffa6e7f63440", 1600, 1200),
+    u("https://images.unsplash.com/photo-1460925895917-afdab827c52f", 1600, 1200),
+    u("https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a", 1600, 1200),
+    u("https://images.unsplash.com/photo-1556565681-67b9cd907d20", 1600, 1200),
+    u("https://images.unsplash.com/photo-1535541101896-f876093ebce3", 1600, 1200)
   ]
 } as const;

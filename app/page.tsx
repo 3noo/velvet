@@ -47,7 +47,7 @@ export default function HomePage() {
             <span className="pill">Web</span>
             <span className="pill">Campaign</span>
             <span className="sep" aria-hidden="true"></span>
-            <span>Booking March 2026</span>
+            <span>Barcelona HQ</span>
           </div>
         </div>
       </section>
