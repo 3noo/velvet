@@ -88,6 +88,7 @@ export function AutoCarousel({
   const reduced = useMemo(() => prefersReducedMotion(), []);
   const ref = useRef<HTMLDivElement | null>(null);
   const preloaded = useRef<Set<string>>(new Set());
+  const pendingProgrammaticScroll = useRef(false);
   const [index, setIndex] = useState(0);
   const [active, setActive] = useState(false);
 
@@ -124,6 +125,7 @@ export function AutoCarousel({
 
     let raf = 0;
     const onScroll = () => {
+      pendingProgrammaticScroll.current = false;
       if (raf) return;
       raf = window.requestAnimationFrame(() => {
         raf = 0;
@@ -147,6 +149,7 @@ export function AutoCarousel({
     if (items.length <= 1) return;
 
     const t = window.setInterval(() => {
+      pendingProgrammaticScroll.current = true;
       setIndex((i) => (i + 1) % items.length);
     }, intervalMs);
 
@@ -157,6 +160,8 @@ export function AutoCarousel({
     const el = ref.current;
     if (!el) return;
     if (!active) return;
+    if (!pendingProgrammaticScroll.current) return;
+    pendingProgrammaticScroll.current = false;
 
     // Scroll to the next slide, but keep swipe/scroll available for the user.
     const w = el.clientWidth;
