@@ -45,7 +45,13 @@ export default function HomePage() {
       {/* SECTION 1: HERO */}
       <section className="hero hero--clarion">
         <div className="hero__media" aria-hidden="true">
-          <SmartImage src={MEDIA.heroPhoto} alt="" sizes="100vw" />
+          <SmartImage
+            src={MEDIA.heroPhoto}
+            alt=""
+            sizes="100vw"
+            loading="eager"
+            fetchPriority="high"
+          />
         </div>
         <div className="hero__shade" aria-hidden="true"></div>
 

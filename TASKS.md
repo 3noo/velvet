@@ -9,7 +9,7 @@ Last updated: 2026-02-10
 - Footer rebuilt to Clarion-style centered stack in `components/SiteFooter.tsx`
 - Homepage rebuilt into the 9 content sections (Hero through Instagram) in `app/page.tsx`
 - Work carousels + portfolio carousels (auto-advance + swipe) in `components/clarion/AutoCarousel.tsx`
-- Testimonials infinite marquee (pause on hover + reduced-motion fallback) in `components/clarion/TestimonialMarquee.tsx`
+- Testimonials auto-advance rail (swipe + reduced-motion fallback) in `components/clarion/TestimonialsRail.tsx`
 - Story page created at `/story` in `app/story/page.tsx`
 - `/about` redirects to `/story` in `app/about/page.tsx`
 - `/services`, `/work`, `/contact` rewritten to Clarion voice/layout in:
@@ -19,6 +19,7 @@ Last updated: 2026-02-10
 - Contact form “Project type” options aligned to Clarion offerings in `app/contact/ContactForm.tsx`
 - Site config consolidated (name/nav/media placeholders/social links) in `lib/site.ts`
 - Icons updated to Clarion mark in `public/img/favicon.svg`, `app/icon.svg`, `public/img/mark.svg`, `public/img/logo.svg`
+- Performance: hero image loads eagerly + carousels preload upcoming slides in `app/page.tsx`, `components/clarion/AutoCarousel.tsx`, `app/head.tsx`
 
 ## Next (You Need To Provide / Decide)
 - Replace placeholders with real assets:
@@ -56,4 +57,3 @@ Last updated: 2026-02-10
 - Dev: `env -u _VOLTA_TOOL_RECURSION npm run dev`
 - Lint: `env -u _VOLTA_TOOL_RECURSION npm run lint`
 - Build: `env -u _VOLTA_TOOL_RECURSION npm run build`
-

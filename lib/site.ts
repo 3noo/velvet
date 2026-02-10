@@ -27,7 +27,7 @@ const u = (base: string, w: number, h?: number) =>
 export const MEDIA = {
   // Homepage hero: placeholder image until a real portrait is provided.
   heroPhoto:
-    "https://cdn.coverr.co/videos/coverr-beach-photo-session-in-progress/thumbnail?width=2400",
+    "https://cdn.coverr.co/videos/coverr-beach-photo-session-in-progress/thumbnail?width=2000",
 
   // Background video loop for the portfolio showcase (placeholder).
   portfolioVideoPoster:
