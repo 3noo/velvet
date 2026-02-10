@@ -844,12 +844,20 @@ summary:focus-visible {
 /* Portfolio showcase */
 .portfolio {
   position: relative;
-  padding: clamp(86px, 8.5vw, 130px) 0;
+  padding: 0;
   color: var(--paper);
-  overflow: hidden;
   border-top: 1px solid rgba(250, 249, 246, 0.18);
   border-bottom: 1px solid rgba(250, 249, 246, 0.18);
   background: #2f2a28;
+}
+
+.portfolio__pin {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .portfolio__video {
@@ -872,6 +880,16 @@ summary:focus-visible {
   inset: 0;
   z-index: 1;
   background: rgba(61, 54, 51, 0.3);
+}
+
+.portfolio__content-wrap {
+  position: relative;
+  z-index: 2;
+  /* Pull content over the pinned video so it scrolls on top. */
+  margin-top: -100vh;
+  /* Add extra bottom space so the pin effect lasts past the content. */
+  padding: clamp(86px, 8.5vw, 130px) 0
+    calc(clamp(86px, 8.5vw, 130px) + 42vh);
 }
 
 .portfolio__content {
@@ -1574,6 +1592,10 @@ body.is-leaving {
 
   .portfolio__frames {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .portfolio__content-wrap {
+    padding-bottom: calc(clamp(86px, 8.5vw, 130px) + 56vh);
   }
 
   .work-grid--clarion {

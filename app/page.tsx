@@ -207,55 +207,59 @@ export default function HomePage() {
 
       {/* SECTION 7: PORTFOLIO SHOWCASE */}
       <section className="portfolio">
-        <div className="portfolio__video" aria-hidden="true">
-          <video
-            playsInline
-            muted
-            loop
-            autoPlay
-            preload="metadata"
-            poster={MEDIA.portfolioVideoPoster}
-            disablePictureInPicture
-          >
-            <source src={MEDIA.portfolioVideoMp4} type="video/mp4" />
-          </video>
-        </div>
-        <div className="portfolio__shade" aria-hidden="true"></div>
-
-        <div className="container portfolio__content">
-          <h2 className="portfolio__title" data-reveal>
-            The work
-          </h2>
-          <p className="portfolio__sub" data-reveal data-reveal-delay="1">
-            Brand strategy and social content for founders who value clarity
-            over viral trends, authenticity over performance.
-          </p>
-
-          <div className="portfolio__frames" data-reveal data-reveal-delay="2">
-            <div className="frame frame--wide">
-              <AutoCarousel
-                aria-label="Portfolio carousel one"
-                items={MEDIA.workSamples.slice(0, 7).map((src) => ({ src }))}
-                intervalMs={3600}
-                sizes="(max-width: 979px) 100vw, 55vw"
-                maxWidth={1800}
-              />
-            </div>
-            <div className="frame frame--wide">
-              <AutoCarousel
-                aria-label="Portfolio carousel two"
-                items={MEDIA.workSamples.slice(3, 10).map((src) => ({ src }))}
-                intervalMs={3900}
-                sizes="(max-width: 979px) 100vw, 55vw"
-                maxWidth={1800}
-              />
-            </div>
+        <div className="portfolio__pin" aria-hidden="true">
+          <div className="portfolio__video">
+            <video
+              playsInline
+              muted
+              loop
+              autoPlay
+              preload="metadata"
+              poster={MEDIA.portfolioVideoPoster}
+              disablePictureInPicture
+            >
+              <source src={MEDIA.portfolioVideoMp4} type="video/mp4" />
+            </video>
           </div>
+          <div className="portfolio__shade"></div>
+        </div>
 
-          <div className="portfolio__actions" data-reveal data-reveal-delay="3">
-            <Link className="btn btn--ghostlight" href="/work">
-              View full portfolio →
-            </Link>
+        <div className="portfolio__content-wrap">
+          <div className="container portfolio__content">
+            <h2 className="portfolio__title" data-reveal>
+              The work
+            </h2>
+            <p className="portfolio__sub" data-reveal data-reveal-delay="1">
+              Brand strategy and social content for founders who value clarity
+              over viral trends, authenticity over performance.
+            </p>
+
+            <div className="portfolio__frames" data-reveal data-reveal-delay="2">
+              <div className="frame frame--wide">
+                <AutoCarousel
+                  aria-label="Portfolio carousel one"
+                  items={MEDIA.workSamples.slice(0, 7).map((src) => ({ src }))}
+                  intervalMs={3600}
+                  sizes="(max-width: 979px) 100vw, 55vw"
+                  maxWidth={1800}
+                />
+              </div>
+              <div className="frame frame--wide">
+                <AutoCarousel
+                  aria-label="Portfolio carousel two"
+                  items={MEDIA.workSamples.slice(3, 10).map((src) => ({ src }))}
+                  intervalMs={3900}
+                  sizes="(max-width: 979px) 100vw, 55vw"
+                  maxWidth={1800}
+                />
+              </div>
+            </div>
+
+            <div className="portfolio__actions" data-reveal data-reveal-delay="3">
+              <Link className="btn btn--ghostlight" href="/work">
+                View full portfolio →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
