@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { AutoCarousel } from "@/components/clarion/AutoCarousel";
 import { InstagramGrid } from "@/components/clarion/InstagramGrid";
-import { TestimonialsBento } from "@/components/clarion/TestimonialsBento";
+import { TestimonialsRail } from "@/components/clarion/TestimonialsRail";
 import { SmartImage } from "@/components/SmartImage";
 import { MEDIA, SITE } from "@/lib/site";
 
@@ -201,7 +201,7 @@ export default function HomePage() {
             </h2>
           </div>
 
-          <TestimonialsBento testimonials={TESTIMONIALS} />
+          <TestimonialsRail testimonials={TESTIMONIALS} />
         </div>
       </section>
 
