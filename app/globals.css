@@ -885,11 +885,12 @@ summary:focus-visible {
 .portfolio__content-wrap {
   position: relative;
   z-index: 2;
+  --portfolio-tail: 56vh;
   /* Pull content over the pinned video so it scrolls on top. */
   margin-top: -100vh;
   /* Add extra bottom space so the pin effect lasts past the content. */
   padding: clamp(86px, 8.5vw, 130px) 0
-    calc(clamp(86px, 8.5vw, 130px) + 100vh);
+    calc(clamp(86px, 8.5vw, 130px) + var(--portfolio-tail));
 }
 
 .portfolio__content {
@@ -1595,7 +1596,7 @@ body.is-leaving {
   }
 
   .portfolio__content-wrap {
-    padding-bottom: calc(clamp(86px, 8.5vw, 130px) + 140vh);
+    --portfolio-tail: 72vh;
   }
 
   .work-grid--clarion {
