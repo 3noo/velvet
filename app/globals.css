@@ -889,7 +889,7 @@ summary:focus-visible {
   margin-top: -100vh;
   /* Add extra bottom space so the pin effect lasts past the content. */
   padding: clamp(86px, 8.5vw, 130px) 0
-    calc(clamp(86px, 8.5vw, 130px) + 42vh);
+    calc(clamp(86px, 8.5vw, 130px) + 100vh);
 }
 
 .portfolio__content {
@@ -1595,7 +1595,7 @@ body.is-leaving {
   }
 
   .portfolio__content-wrap {
-    padding-bottom: calc(clamp(86px, 8.5vw, 130px) + 56vh);
+    padding-bottom: calc(clamp(86px, 8.5vw, 130px) + 140vh);
   }
 
   .work-grid--clarion {
