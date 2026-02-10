@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { AutoCarousel } from "@/components/clarion/AutoCarousel";
 import { InstagramGrid } from "@/components/clarion/InstagramGrid";
-import { TestimonialMarquee } from "@/components/clarion/TestimonialMarquee";
+import { TestimonialsBento } from "@/components/clarion/TestimonialsBento";
 import { SmartImage } from "@/components/SmartImage";
 import { MEDIA, SITE } from "@/lib/site";
 
@@ -192,7 +192,16 @@ export default function HomePage() {
       {/* SECTION 6: TESTIMONIALS CAROUSEL */}
       <section className="section section--sand">
         <div className="container">
-          <TestimonialMarquee testimonials={TESTIMONIALS} />
+          <div className="section-head section-head--center">
+            <p className="kicker" data-reveal>
+              Testimonials
+            </p>
+            <h2 className="h2" data-reveal data-reveal-delay="1">
+              What clients say
+            </h2>
+          </div>
+
+          <TestimonialsBento testimonials={TESTIMONIALS} />
         </div>
       </section>
 
