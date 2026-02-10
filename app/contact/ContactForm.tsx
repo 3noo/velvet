@@ -64,9 +64,9 @@ export function ContactForm() {
           <option value="" disabled>
             Select one
           </option>
-          <option>Identity Sprint</option>
-          <option>Website Build</option>
-          <option>Campaign Kit</option>
+          <option>Brand Clarity</option>
+          <option>Social Strategy</option>
+          <option>Founder Visibility</option>
           <option>Not sure yet</option>
         </select>
       </label>
@@ -89,7 +89,7 @@ export function ContactForm() {
         <textarea
           name="message"
           required
-          placeholder="Link your current site and describe the goal."
+          placeholder="Link your current site and describe what's unclear right now."
         ></textarea>
       </label>
 

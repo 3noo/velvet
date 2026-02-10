@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import type { ImgHTMLAttributes } from "react";
 
 type SmartImageProps = Omit<ImgHTMLAttributes<HTMLImageElement>, "src"> & {
@@ -54,17 +55,20 @@ export function SmartImage({
   maxWidth,
   loading,
   decoding,
+  alt,
   ...rest
 }: SmartImageProps) {
   const parsed = parseUnsplash(src);
   const finalLoading = loading ?? "lazy";
   const finalDecoding = decoding ?? "async";
+  const finalAlt = alt ?? "";
 
   if (!parsed) {
     return (
       <img
         {...rest}
         src={src}
+        alt={finalAlt}
         sizes={sizes}
         loading={finalLoading}
         decoding={finalDecoding}
@@ -88,10 +92,10 @@ export function SmartImage({
       {...rest}
       src={fallbackSrc}
       srcSet={srcSet}
+      alt={finalAlt}
       sizes={sizes ?? "100vw"}
       loading={finalLoading}
       decoding={finalDecoding}
     />
   );
 }
-

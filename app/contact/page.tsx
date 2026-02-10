@@ -12,24 +12,27 @@ export const metadata = {
 export default function ContactPage() {
   return (
     <>
-      <section className="section">
-        <div className="container two-col">
-          <div className="stack">
+      <section className="section section--cream">
+        <div className="container split">
+          <div className="split__content">
             <p className="kicker" data-reveal>
               Contact
             </p>
             <h1 className="display" data-reveal data-reveal-delay="1">
-              Let&apos;s build something precise.
+              Book a call
             </h1>
             <p className="lede" data-reveal data-reveal-delay="2">
-              Send the basics: what you sell, what&apos;s not working, and what a win
-              looks like. I&apos;ll reply with a tight scope and a timeline.
+              A free 20-minute call to get clear on what&apos;s not working and what
+              to do next. No pitch. Just clarity on whether we&apos;re a fit.
             </p>
 
             <div className="divider" aria-hidden="true"></div>
 
             <div className="stack" data-reveal data-reveal-delay="3">
-              <p className="kicker">Email</p>
+              <p className="kicker">Based</p>
+              <p className="small muted">{SITE.location}</p>
+
+              <p className="kicker mt-18">Email</p>
               <a
                 className="link"
                 href={`mailto:${SITE.email}`}
@@ -37,38 +40,50 @@ export default function ContactPage() {
               >
                 {SITE.email}
               </a>
-              <p className="small muted">Barcelona HQ · CET/CEST</p>
-              <p className="kicker mt-18">Response</p>
-              <p className="small muted">Typically within 1-2 business days.</p>
+
+              <p className="kicker mt-18">Instagram</p>
+              <a
+                className="link"
+                href={SITE.instagramUrl}
+                target="_blank"
+                rel="noreferrer"
+                data-no-transition
+              >
+                {SITE.instagramHandle}
+              </a>
+
+              <p className="small muted mt-18">Typically within 1-2 business days.</p>
             </div>
           </div>
 
-          <div className="media-frame" data-reveal data-reveal-delay="1">
-            <SmartImage
-              src={MEDIA.contactHero}
-              alt=""
-              sizes="(max-width: 979px) 100vw, 45vw"
-              maxWidth={1600}
-            />
+          <div className="split__media" data-reveal data-reveal-delay="1">
+            <div className="frame frame--tall" aria-hidden="true">
+              <SmartImage
+                src={MEDIA.contactPhoto}
+                alt=""
+                sizes="(max-width: 979px) 100vw, 45vw"
+                maxWidth={1800}
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="section section--paper">
-        <div className="container two-col">
-          <div className="stack">
+      <section className="section section--sand">
+        <div className="container split">
+          <div className="split__content">
             <h2 className="h2" data-reveal>
               Project details
             </h2>
             <p className="muted" data-reveal data-reveal-delay="1">
-              A few quick questions so we can reply with a scope, timeline, and
-              the right package.
+              A few quick questions so I can reply with a scope and the right
+              starting point.
             </p>
             <div className="divider" aria-hidden="true"></div>
             <ul className="ticks" data-reveal data-reveal-delay="2">
-              <li>Preferred package: identity, web, campaign</li>
-              <li>Timeline: ideal launch date</li>
-              <li>Budget range: helps keep scope honest</li>
+              <li>Which offering you&apos;re considering</li>
+              <li>Timeline: ideal start date</li>
+              <li>Budget range (just a range)</li>
             </ul>
           </div>
 
@@ -79,12 +94,12 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="cta">
+      <section className="cta cta--clarion">
         <div className="container cta__inner" data-reveal>
           <h2 className="h2 h2--light">Prefer email?</h2>
-          <p>
-            Send a short note with your link and your goal. You&apos;ll get a
-            structured reply, not a sales sequence.
+          <p className="lede lede--light">
+            Send a short note with your link and your goal. You&apos;ll get a clear
+            reply, not a sales sequence.
           </p>
           <div className="cta__actions">
             <a
@@ -95,7 +110,7 @@ export default function ContactPage() {
               Email
             </a>
             <Link className="btn btn--ghostlight" href="/services">
-              Packages
+              Services
             </Link>
           </div>
         </div>
@@ -103,3 +118,4 @@ export default function ContactPage() {
     </>
   );
 }
+

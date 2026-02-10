@@ -6,52 +6,60 @@ import { Year } from "@/components/Year";
 export function SiteFooter() {
   return (
     <footer className="site-footer">
-      <div className="container footer-grid">
-        <div className="stack">
-          <Link className="brand" href="/">
-            <img
-              className="brand__mark"
-              src="/img/mark.svg"
-              alt=""
-              aria-hidden="true"
-            />
-            <span className="brand__word">
-              <span className="brand__name">{SITE.name}</span>
-              <span className="brand__tag">{SITE.tagline}</span>
-            </span>
-          </Link>
-          <p className="small muted">
-            Sharp hierarchy, fast pages, clean motion. Built for marketing teams
-            who ship.
-          </p>
-        </div>
+      <div className="container footer-center">
+        <Link className="footer-brand" href="/">
+          <span className="footer-brand__name">{SITE.fullName}</span>
+          <span className="footer-brand__tag">{SITE.footerTagline}</span>
+        </Link>
 
-        <div className="footer-links" aria-label="Footer navigation">
+        <nav className="footer-nav" aria-label="Footer navigation">
           {NAV.map((item) => (
             <Link key={item.href} href={item.href}>
               {item.label}
             </Link>
           ))}
-        </div>
+        </nav>
 
-        <div className="stack">
-          <p className="kicker">Get in touch</p>
+        <div className="footer-contact" aria-label="Contact">
+          <span className="footer-contact__item">{SITE.location}</span>
           <a
-            className="link"
+            className="footer-contact__item"
             href={`mailto:${SITE.email}`}
             data-no-transition
           >
             {SITE.email}
           </a>
-          <p className="small muted">Headquartered in Barcelona. Working worldwide.</p>
+          {SITE.whatsappUrl ? (
+            <a
+              className="footer-contact__item"
+              href={SITE.whatsappUrl}
+              target="_blank"
+              rel="noreferrer"
+              data-no-transition
+            >
+              WhatsApp
+            </a>
+          ) : (
+            <span className="footer-contact__item">WhatsApp</span>
+          )}
+          {SITE.linkedinUrl ? (
+            <a
+              className="footer-contact__item"
+              href={SITE.linkedinUrl}
+              target="_blank"
+              rel="noreferrer"
+              data-no-transition
+            >
+              LinkedIn
+            </a>
+          ) : (
+            <span className="footer-contact__item">LinkedIn</span>
+          )}
         </div>
-      </div>
 
-      <div className="container footer-bottom">
-        <p className="small muted">
-          © <Year /> {SITE.fullName}.
+        <p className="footer-copy">
+          © <Year /> {SITE.fullName}
         </p>
-        <p className="small muted">Barcelona HQ · CET/CEST</p>
       </div>
     </footer>
   );

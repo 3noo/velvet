@@ -5,7 +5,7 @@ const TOP = [
   "Budget",
   "Package",
   "Barcelona HQ",
-  "Velvet Studio",
+  "Clarion Studio",
   "Launch",
   "Offer",
   "Proof",
@@ -14,14 +14,14 @@ const TOP = [
 ] as const;
 
 const BOTTOM = [
-  "Identity / Web / Campaign",
+  "Brand / Social / Visibility",
   "What you sell",
   "What's not working",
   "What a win looks like",
   "Ideal launch date",
   "Range only, no guessing",
-  "Fast reads",
-  "Clean direction",
+  "Clarity first",
+  "Structure next",
   "Mobile-first",
   "Clear hierarchy",
   "Less noise",

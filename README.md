@@ -1,11 +1,11 @@
-# Velvet
+# Clarion Studio
 
 5-page marketing site built with **Next.js App Router**:
 
 - `/`
 - `/services`
 - `/work`
-- `/about`
+- `/story` (and `/about` redirects to `/story`)
 - `/contact`
 
 ## Local dev

@@ -1,14 +1,23 @@
 export const SITE = {
-  name: "Velvet",
-  fullName: "Velvet Studio",
-  tagline: "Barcelona",
-  email: "hello@velvet.studio"
+  name: "CLARION",
+  fullName: "Clarion Studio",
+  // Handwritten tagline shown under the logo.
+  tagline: "The Clarion Method",
+  // Footer tagline (body font).
+  footerTagline: "Brand strategy for founder-led businesses",
+  email: "hello@clarion.studio",
+  location: "Barcelona, Spain",
+  instagramHandle: "@clarionstudio",
+  instagramUrl: "https://instagram.com/clarionstudio",
+  // TODO: Replace with the real links once provided.
+  whatsappUrl: "",
+  linkedinUrl: ""
 } as const;
 
 export const NAV = [
-  { href: "/services", label: "Services" },
   { href: "/work", label: "Work" },
-  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/story", label: "Story" },
   { href: "/contact", label: "Contact" }
 ] as const;
 
@@ -16,25 +25,45 @@ const u = (base: string, w: number, h?: number) =>
   `${base}?auto=format&fit=crop&w=${w}${h ? `&h=${h}` : ""}&q=80`;
 
 export const MEDIA = {
-  hero: "https://cdn.coverr.co/videos/coverr-beach-photo-session-in-progress/thumbnail?width=2400",
-  heroVideoMp4: "https://cdn.coverr.co/videos/coverr-beach-photo-session-in-progress/720p.mp4",
-  band: u("https://images.unsplash.com/photo-1762062537479-31ef040b81a6", 2400, 1200),
-  services: u("https://images.unsplash.com/photo-1750306955715-85fdf631bd0b", 1400, 1600),
-  services2: u("https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00", 1400, 1600),
-  workHero: u("https://images.unsplash.com/photo-1759986452774-be47f7db2362", 1400, 1600),
-  workReelPoster:
-    "https://cdn.coverr.co/videos/coverr-teamwork-in-the-office-7943/thumbnail?width=1600",
-  workReelMp4: "https://cdn.coverr.co/videos/coverr-teamwork-in-the-office-7943/720p.mp4",
-  aboutHero: u("https://images.unsplash.com/photo-1668035229833-546f3d9fff58", 1400, 1600),
-  aboutBand: u("https://images.unsplash.com/photo-1751200065697-4461cc2b43cb", 2400, 1200),
-  about2: u("https://images.unsplash.com/photo-1764755932155-dabbee87df7e", 1400, 1600),
-  contactHero: u("https://images.unsplash.com/photo-1747336754882-dfa5c49f15da", 1400, 1600),
-  gallery: [
-    u("https://images.unsplash.com/photo-1531496635011-06e2870a6722", 1600, 1200),
-    u("https://images.unsplash.com/photo-1590650423710-ffa6e7f63440", 1600, 1200),
-    u("https://images.unsplash.com/photo-1460925895917-afdab827c52f", 1600, 1200),
-    u("https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a", 1600, 1200),
-    u("https://images.unsplash.com/photo-1556565681-67b9cd907d20", 1600, 1200),
-    u("https://images.unsplash.com/photo-1535541101896-f876093ebce3", 1600, 1200)
+  // Homepage hero: placeholder image until a real portrait is provided.
+  heroPhoto:
+    "https://cdn.coverr.co/videos/coverr-beach-photo-session-in-progress/thumbnail?width=2400",
+
+  // Background video loop for the portfolio showcase (placeholder).
+  portfolioVideoPoster:
+    "https://cdn.coverr.co/videos/coverr-beach-photo-session-in-progress/thumbnail?width=2000",
+  portfolioVideoMp4:
+    "https://cdn.coverr.co/videos/coverr-beach-photo-session-in-progress/720p.mp4",
+
+  // Supporting photos (placeholders).
+  storyPhoto: u("https://images.unsplash.com/photo-1524504388940-b1c1722653e1", 1800, 2000),
+  howWeWorkPhoto: u("https://images.unsplash.com/photo-1522071820081-009f0129c71c", 1800, 2000),
+  servicesPhoto: u("https://images.unsplash.com/photo-1524758631624-e2822e304c36", 1800, 2000),
+  contactPhoto: u("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a", 1800, 2000),
+
+  // Work sample pools used by carousels and grids.
+  workSamples: [
+    u("https://images.unsplash.com/photo-1531496635011-06e2870a6722", 1800, 1350),
+    u("https://images.unsplash.com/photo-1590650423710-ffa6e7f63440", 1800, 1350),
+    u("https://images.unsplash.com/photo-1460925895917-afdab827c52f", 1800, 1350),
+    u("https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a", 1800, 1350),
+    u("https://images.unsplash.com/photo-1556565681-67b9cd907d20", 1800, 1350),
+    u("https://images.unsplash.com/photo-1535541101896-f876093ebce3", 1800, 1350),
+    u("https://images.unsplash.com/photo-1523275335684-37898b6baf30", 1800, 1350),
+    u("https://images.unsplash.com/photo-1522202176988-66273c2fd55f", 1800, 1350),
+    u("https://images.unsplash.com/photo-1503387762-592deb58ef4e", 1800, 1350),
+    u("https://images.unsplash.com/photo-1521737604893-d14cc237f11d", 1800, 1350)
+  ],
+
+  instagramPlaceholders: [
+    u("https://images.unsplash.com/photo-1515879218367-8466d910aaa4", 1200, 1200),
+    u("https://images.unsplash.com/photo-1524758631624-e2822e304c36", 1200, 1200),
+    u("https://images.unsplash.com/photo-1526481280695-3c687fd643ed", 1200, 1200),
+    u("https://images.unsplash.com/photo-1487014679447-9f8336841d58", 1200, 1200),
+    u("https://images.unsplash.com/photo-1529333166437-7750a6dd5a70", 1200, 1200),
+    u("https://images.unsplash.com/photo-1545239351-1141bd82e8a6", 1200, 1200),
+    u("https://images.unsplash.com/photo-1498050108023-c5249f4df085", 1200, 1200),
+    u("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee", 1200, 1200),
+    u("https://images.unsplash.com/photo-1521737604893-d14cc237f11d", 1200, 1200)
   ]
 } as const;

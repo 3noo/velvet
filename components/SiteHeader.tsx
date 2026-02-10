@@ -34,16 +34,8 @@ export function SiteHeader() {
           aria-label={`${SITE.fullName} home`}
           onClick={close}
         >
-          <img
-            className="brand__mark"
-            src="/img/mark.svg"
-            alt=""
-            aria-hidden="true"
-          />
-          <span className="brand__word">
-            <span className="brand__name">{SITE.name}</span>
-            <span className="brand__tag">{SITE.tagline}</span>
-          </span>
+          <span className="brand__name">{SITE.name}</span>
+          <span className="brand__tag">{SITE.tagline}</span>
         </Link>
 
         <button

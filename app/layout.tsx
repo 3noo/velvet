@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Space_Grotesk } from "next/font/google";
+import { Allura, Instrument_Serif, Sofia_Sans } from "next/font/google";
 
 import "@/app/globals.css";
 import { ClientEffects } from "@/components/ClientEffects";
@@ -7,15 +7,25 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SITE } from "@/lib/site";
 
-const sans = Space_Grotesk({
+// Temporary Google substitutes until licensed fonts are provided.
+// Swap path: replace these with `next/font/local` and keep the same CSS vars.
+const body = Sofia_Sans({
   subsets: ["latin"],
-  variable: "--font-space",
-  display: "swap"
+  variable: "--font-clarion-body",
+  display: "swap",
+  weight: ["400", "500", "700"]
 });
 
-const serif = Instrument_Serif({
+const display = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-instrument",
+  variable: "--font-clarion-display",
+  display: "swap",
+  weight: ["400"]
+});
+
+const script = Allura({
+  subsets: ["latin"],
+  variable: "--font-clarion-script",
   display: "swap",
   weight: ["400"]
 });
@@ -26,7 +36,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.fullName}`
   },
   description:
-    "Velvet Studio (Barcelona): brand, web, and campaigns with sharp hierarchy, crisp motion, and fast pages.",
+    "Clarion Studio (Barcelona): brand strategy and social media strategy for founder-led brands where clarity comes first.",
   applicationName: SITE.fullName,
   icons: {
     icon: [{ url: "/img/favicon.svg", type: "image/svg+xml" }]
@@ -39,7 +49,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`js ${sans.variable} ${serif.variable}`}>
+    <html
+      lang="en"
+      className={`js ${body.variable} ${display.variable} ${script.variable}`}
+    >
       <body>
         <noscript>
           <style>{`[data-reveal]{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}`}</style>
