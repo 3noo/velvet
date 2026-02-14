@@ -17,11 +17,13 @@ function prefersReducedMotion() {
 
 export function TestimonialsRail({
   testimonials,
-  intervalMs = 4200,
+  intervalMs = 6800,
+  autoplay = false,
   "aria-label": ariaLabel = "Testimonials"
 }: {
   testimonials: readonly Testimonial[];
   intervalMs?: number;
+  autoplay?: boolean;
   "aria-label"?: string;
 }) {
   const reduced = useMemo(() => prefersReducedMotion(), []);
@@ -32,6 +34,7 @@ export function TestimonialsRail({
     const el = ref.current;
     if (!el) return;
     if (reduced) return;
+    if (!autoplay) return;
     if (testimonials.length <= 1) return;
 
     const tick = () => {
@@ -42,7 +45,7 @@ export function TestimonialsRail({
 
     const t = window.setInterval(tick, intervalMs);
     return () => window.clearInterval(t);
-  }, [intervalMs, reduced, testimonials.length]);
+  }, [autoplay, intervalMs, reduced, testimonials.length]);
 
   useEffect(() => {
     const el = ref.current;
@@ -86,4 +89,3 @@ export function TestimonialsRail({
     </div>
   );
 }
-

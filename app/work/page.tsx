@@ -12,7 +12,7 @@ export default function WorkPage() {
   return (
     <>
       <section className="section section--cream">
-        <div className="container split">
+        <div className="container split split--lead">
           <div className="split__content">
             <p className="kicker" data-reveal>
               Work
@@ -25,23 +25,14 @@ export default function WorkPage() {
               over trends, and a presence that feels like the business behind
               it.
             </p>
-
-            <div className="section-actions" data-reveal data-reveal-delay="3">
-              <Link className="btn btn--primary" href="/contact">
-                Book a Call
-              </Link>
-              <Link className="btn btn--outline" href="/services">
-                View services
-              </Link>
-            </div>
           </div>
 
           <div className="split__media" data-reveal data-reveal-delay="1">
-            <div className="frame frame--tall">
+            <div className="frame frame--lead">
               <AutoCarousel
                 aria-label="Work samples"
                 items={MEDIA.workSamples.slice(0, 8).map((src) => ({ src }))}
-                intervalMs={3600}
+                intervalMs={6200}
                 sizes="(max-width: 979px) 100vw, 45vw"
                 maxWidth={1800}
               />
@@ -229,7 +220,7 @@ export default function WorkPage() {
           </p>
           <div className="cta__actions">
             <Link className="btn btn--light" href="/contact">
-              Book a Call
+              Contact
             </Link>
             <Link className="btn btn--ghostlight" href="/services">
               Services
@@ -240,4 +231,3 @@ export default function WorkPage() {
     </>
   );
 }
-

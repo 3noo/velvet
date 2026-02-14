@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ContactForm } from "@/app/contact/ContactForm";
 import { ContactMosaic } from "@/app/contact/ContactMosaic";
 import { SmartImage } from "@/components/SmartImage";
+import { SocialLinks } from "@/components/SocialLinks";
 import { MEDIA, SITE } from "@/lib/site";
 
 export const metadata = {
@@ -13,17 +14,17 @@ export default function ContactPage() {
   return (
     <>
       <section className="section section--cream">
-        <div className="container split">
+        <div className="container split split--lead">
           <div className="split__content">
             <p className="kicker" data-reveal>
               Contact
             </p>
             <h1 className="display" data-reveal data-reveal-delay="1">
-              Book a call
+              Start your project
             </h1>
             <p className="lede" data-reveal data-reveal-delay="2">
-              A free 20-minute call to get clear on what&apos;s not working and what
-              to do next. No pitch. Just clarity on whether we&apos;re a fit.
+              Share where your brand feels unclear and what you&apos;re building
+              toward. I&apos;ll reply with the clearest next step.
             </p>
 
             <div className="divider" aria-hidden="true"></div>
@@ -53,11 +54,13 @@ export default function ContactPage() {
               </a>
 
               <p className="small muted mt-18">Typically within 1-2 business days.</p>
+
+              <SocialLinks className="contact-socials mt-18" />
             </div>
           </div>
 
           <div className="split__media" data-reveal data-reveal-delay="1">
-            <div className="frame frame--tall" aria-hidden="true">
+            <div className="frame frame--lead" aria-hidden="true">
               <SmartImage
                 src={MEDIA.contactPhoto}
                 alt=""
@@ -118,4 +121,3 @@ export default function ContactPage() {
     </>
   );
 }
-

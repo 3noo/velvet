@@ -12,6 +12,7 @@ type CarouselItem = {
 export type AutoCarouselProps = {
   items: CarouselItem[];
   intervalMs?: number;
+  autoplay?: boolean;
   sizes?: string;
   maxWidth?: number;
   "aria-label"?: string;
@@ -80,7 +81,8 @@ function preloadSrcFor(
 
 export function AutoCarousel({
   items,
-  intervalMs = 3600,
+  intervalMs = 5600,
+  autoplay = false,
   sizes,
   maxWidth,
   "aria-label": ariaLabel = "Carousel"
@@ -146,6 +148,7 @@ export function AutoCarousel({
   useEffect(() => {
     if (!active) return;
     if (reduced) return;
+    if (!autoplay) return;
     if (items.length <= 1) return;
 
     const t = window.setInterval(() => {
@@ -154,7 +157,7 @@ export function AutoCarousel({
     }, intervalMs);
 
     return () => window.clearInterval(t);
-  }, [active, items.length, intervalMs, reduced]);
+  }, [active, autoplay, items.length, intervalMs, reduced]);
 
   useEffect(() => {
     const el = ref.current;

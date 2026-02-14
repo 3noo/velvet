@@ -39,36 +39,66 @@ const TESTIMONIALS = [
   }
 ] as const;
 
+const STUDIO_SELECTIONS = [
+  {
+    title: "Founder presence refresh",
+    category: "Brand Direction",
+    src: MEDIA.workSamples[0]
+  },
+  {
+    title: "Social narrative framework",
+    category: "Content Strategy",
+    src: MEDIA.workSamples[4]
+  },
+  {
+    title: "Editorial campaign rollout",
+    category: "Launch System",
+    src: MEDIA.workSamples[2]
+  }
+] as const;
+
 export default function HomePage() {
   return (
     <>
       {/* SECTION 1: HERO */}
       <section className="hero hero--clarion">
-        <div className="hero__media" aria-hidden="true">
-          <SmartImage
-            src={MEDIA.heroPhoto}
-            alt=""
-            sizes="100vw"
-            loading="eager"
-            fetchPriority="high"
-          />
+        <div className="hero__media" aria-hidden="true" data-parallax>
+          <video
+            className="hero__video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={MEDIA.heroPhoto}
+          >
+            <source src={MEDIA.heroVideoMp4} type="video/mp4" />
+          </video>
         </div>
         <div className="hero__shade" aria-hidden="true"></div>
 
         <div className="container hero__content hero__content--clarion">
           <h1 className="hero__headline" data-reveal>
-            Brand Strategist | Social Media Strategist
+            Where clarity becomes presence,
+            <br />
+            and your story learns to lead.
           </h1>
           <p className="hero__sub" data-reveal data-reveal-delay="1">
-            For founder-led brands where clarity matters
+            For founder-led brands turning vision
             <br />
-            as much as what&apos;s being built.
+            into a voice people remember.
           </p>
         </div>
 
         <div className="hero__watermark" aria-hidden="true">
-          <div className="hero__wm-name">{SITE.name}</div>
-          <div className="hero__wm-tag">{SITE.tagline}</div>
+          <SmartImage
+            className="hero__wm-logo"
+            src={SITE.logoLight}
+            alt=""
+            sizes="118px"
+            loading="eager"
+            decoding="sync"
+          />
         </div>
       </section>
 
@@ -76,7 +106,7 @@ export default function HomePage() {
       <section className="section section--sand signature-quote">
         <div className="container signature-quote__inner">
           <p className="signature-quote__text" data-reveal>
-            Stop trying to sound like everyone else.
+            Stop trying to be like everyone else.
           </p>
           <p className="signature-quote__sig" data-reveal data-reveal-delay="1">
             — M.
@@ -84,45 +114,55 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 3: WORK PREVIEW */}
+      {/* SECTION 3: STUDIO SELECTIONS */}
       <section className="section section--cream">
         <div className="container">
-          <h2 className="h2 h2--center" data-reveal>
-            Recent work
-          </h2>
-
-          <div className="work-preview" data-reveal data-reveal-delay="1">
-            <div className="frame">
-              <AutoCarousel
-                aria-label="Recent work carousel one"
-                items={MEDIA.workSamples.slice(0, 6).map((src) => ({ src }))}
-                intervalMs={3800}
-                sizes="(max-width: 979px) 100vw, 50vw"
-                maxWidth={1800}
-              />
-            </div>
-            <div className="frame">
-              <AutoCarousel
-                aria-label="Recent work carousel two"
-                items={MEDIA.workSamples.slice(4, 10).map((src) => ({ src }))}
-                intervalMs={3600}
-                sizes="(max-width: 979px) 100vw, 50vw"
-                maxWidth={1800}
-              />
-            </div>
+          <div className="section-head">
+            <p className="kicker" data-reveal>
+              Studio selections
+            </p>
+            <h2 className="display-xl" data-reveal data-reveal-delay="1">
+              Studio Selections
+            </h2>
           </div>
 
-          <p className="hint" data-reveal data-reveal-delay="2">
-            Swipe to explore →
-          </p>
+          <div className="selection-grid">
+            {STUDIO_SELECTIONS.map((item, idx) => (
+              <article
+                key={item.title}
+                className={`selection-card ${idx === 0 ? "selection-card--feature" : ""} ${
+                  idx === 1 ? "selection-card--offset" : ""
+                }`}
+                data-reveal
+                data-reveal-delay={String(idx + 1)}
+              >
+                <SmartImage
+                  src={item.src}
+                  alt={item.title}
+                  sizes="(max-width: 979px) 100vw, 40vw"
+                  maxWidth={2000}
+                />
+                <div className="selection-card__overlay">
+                  <p className="selection-card__category">{item.category}</p>
+                  <h3 className="selection-card__title">{item.title}</h3>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="section-actions" data-reveal data-reveal-delay="4">
+            <Link className="cta-link" href="/work">
+              Explore projects →
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* SECTION 4: SERVICES TEASER */}
-      <section className="section section--sand">
+      <section className="section section--dark">
         <div className="container">
           <div className="section-head section-head--center">
-            <h2 className="h2" data-reveal>
+            <h2 className="h2 h2--light" data-reveal>
               Studio offerings
             </h2>
           </div>
@@ -142,7 +182,7 @@ export default function HomePage() {
           </div>
 
           <div className="section-actions" data-reveal data-reveal-delay="3">
-            <Link className="btn btn--primary" href="/services">
+            <Link className="cta-link cta-link--light" href="/services">
               Explore services →
             </Link>
           </div>
@@ -151,9 +191,9 @@ export default function HomePage() {
 
       {/* SECTION 5: MY STORY */}
       <section className="section section--cream">
-        <div className="container split">
+        <div className="container split split--lead">
           <div className="split__media" data-reveal>
-            <div className="frame frame--tall" aria-hidden="true">
+            <div className="frame frame--lead" aria-hidden="true">
               <SmartImage
                 src={MEDIA.storyPhoto}
                 alt=""
@@ -196,36 +236,32 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 6: TESTIMONIALS CAROUSEL */}
-      <section className="section section--sand">
+      <section className="section section--dark">
         <div className="container">
           <div className="section-head section-head--center">
             <p className="kicker" data-reveal>
               Testimonials
             </p>
-            <h2 className="h2" data-reveal data-reveal-delay="1">
+            <h2 className="h2 h2--light" data-reveal data-reveal-delay="1">
               What clients say
             </h2>
           </div>
 
-          <TestimonialsRail testimonials={TESTIMONIALS} />
+          <TestimonialsRail testimonials={TESTIMONIALS} autoplay />
         </div>
       </section>
 
       {/* SECTION 7: PORTFOLIO SHOWCASE */}
       <section className="portfolio">
         <div className="portfolio__pin" aria-hidden="true">
-          <div className="portfolio__video">
-            <video
-              playsInline
-              muted
-              loop
-              autoPlay
-              preload="metadata"
-              poster={MEDIA.portfolioVideoPoster}
-              disablePictureInPicture
-            >
-              <source src={MEDIA.portfolioVideoMp4} type="video/mp4" />
-            </video>
+          <div className="portfolio__media">
+            <SmartImage
+              src={MEDIA.portfolioPinnedImage}
+              alt=""
+              sizes="100vw"
+              loading="eager"
+              maxWidth={2400}
+            />
           </div>
           <div className="portfolio__shade"></div>
         </div>
@@ -245,7 +281,8 @@ export default function HomePage() {
                 <AutoCarousel
                   aria-label="Portfolio carousel one"
                   items={MEDIA.workSamples.slice(0, 7).map((src) => ({ src }))}
-                  intervalMs={3600}
+                  autoplay
+                  intervalMs={6200}
                   sizes="(max-width: 979px) 100vw, 55vw"
                   maxWidth={1800}
                 />
@@ -254,7 +291,8 @@ export default function HomePage() {
                 <AutoCarousel
                   aria-label="Portfolio carousel two"
                   items={MEDIA.workSamples.slice(3, 10).map((src) => ({ src }))}
-                  intervalMs={3900}
+                  autoplay
+                  intervalMs={6600}
                   sizes="(max-width: 979px) 100vw, 55vw"
                   maxWidth={1800}
                 />
@@ -262,7 +300,7 @@ export default function HomePage() {
             </div>
 
             <div className="portfolio__actions" data-reveal data-reveal-delay="3">
-              <Link className="btn btn--ghostlight" href="/work">
+              <Link className="cta-link cta-link--light" href="/work">
                 View full portfolio →
               </Link>
             </div>
@@ -272,7 +310,7 @@ export default function HomePage() {
 
       {/* SECTION 8: HOW WE WORK TOGETHER */}
       <section className="section section--cream">
-        <div className="container how">
+        <div className="container how how--horizontal">
           <div className="how__text">
             <h2 className="h2" data-reveal>
               How we work together
@@ -285,13 +323,26 @@ export default function HomePage() {
             <p className="muted" data-reveal data-reveal-delay="2">
               Here&apos;s what it actually looks like:
             </p>
+          </div>
 
-            <div className="roadmap">
+          <div className="how__media" data-reveal data-reveal-delay="2">
+            <div className="frame frame--how" aria-hidden="true">
+              <SmartImage
+                src={MEDIA.howWeWorkPhoto}
+                alt=""
+                sizes="(max-width: 979px) 100vw, 34vw"
+                maxWidth={1800}
+              />
+            </div>
+          </div>
+
+          <div className="how__steps">
+            <div className="roadmap roadmap--horizontal">
               <div className="roadmap-step" data-reveal>
                 <p className="roadmap-step__k">Step 1</p>
                 <h3 className="roadmap-step__t">We talk</h3>
                 <p className="roadmap-step__d">
-                  A free 20-minute call where I ask questions about your
+                  A short clarity chat where I ask questions about your
                   business, your audience, and what&apos;s not working. No pitch.
                   Just clarity on whether we&apos;re a fit.
                 </p>
@@ -336,33 +387,22 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
-
-            <p className="muted lead" data-reveal data-reveal-delay="5">
-              It&apos;s simple. We talk, we plan, we create, we refine.
-            </p>
-
-            <p className="note note--tilt" data-reveal data-reveal-delay="6">
-              No disappearing after the kickoff call. I&apos;m here throughout.
-            </p>
           </div>
 
-          <div className="how__media" data-reveal data-reveal-delay="2">
-            <div className="frame frame--tall" aria-hidden="true">
-              <SmartImage
-                src={MEDIA.howWeWorkPhoto}
-                alt=""
-                sizes="(max-width: 979px) 100vw, 40vw"
-                maxWidth={1800}
-              />
-            </div>
-          </div>
+          <p className="muted lead how__summary" data-reveal data-reveal-delay="5">
+            It&apos;s simple. We talk, we plan, we create, we refine.
+          </p>
+
+          <p className="note note--tilt how__note" data-reveal data-reveal-delay="6">
+            No disappearing after kickoff. I&apos;m here throughout.
+          </p>
         </div>
       </section>
 
       {/* SECTION 9: INSTAGRAM FEED */}
-      <section className="section section--sand">
+      <section className="section section--dark">
         <div className="container">
-          <h2 className="h2 h2--center" data-reveal>
+          <h2 className="h2 h2--center h2--light" data-reveal>
             Follow along
           </h2>
 

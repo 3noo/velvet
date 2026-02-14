@@ -29,7 +29,7 @@ export default function ServicesPage() {
   return (
     <>
       <section className="section section--cream">
-        <div className="container split">
+        <div className="container split split--lead">
           <div className="split__content">
             <p className="kicker" data-reveal>
               Services
@@ -45,7 +45,7 @@ export default function ServicesPage() {
 
             <div className="section-actions" data-reveal data-reveal-delay="3">
               <Link className="btn btn--primary" href="/contact">
-                Book a Call
+                Contact
               </Link>
               <Link className="btn btn--outline" href="/work">
                 View work
@@ -54,7 +54,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="split__media" data-reveal data-reveal-delay="1">
-            <div className="frame frame--tall" aria-hidden="true">
+            <div className="frame frame--lead" aria-hidden="true">
               <SmartImage
                 src={MEDIA.servicesPhoto}
                 alt=""
@@ -99,7 +99,7 @@ export default function ServicesPage() {
 
           <div className="section-actions" data-reveal data-reveal-delay="3">
             <Link className="btn btn--primary" href="/contact">
-              Book a Call
+              Contact
             </Link>
           </div>
         </div>
@@ -125,4 +125,3 @@ export default function ServicesPage() {
     </>
   );
 }
-

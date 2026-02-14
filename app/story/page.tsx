@@ -11,7 +11,7 @@ export default function StoryPage() {
   return (
     <>
       <section className="section section--cream">
-        <div className="container split">
+        <div className="container split split--lead">
           <div className="split__content">
             <p className="kicker" data-reveal>
               Story
@@ -52,13 +52,13 @@ export default function StoryPage() {
                 View services
               </Link>
               <Link className="btn btn--outline" href="/contact">
-                Book a Call
+                Contact
               </Link>
             </div>
           </div>
 
           <div className="split__media" data-reveal data-reveal-delay="1">
-            <div className="frame frame--tall" aria-hidden="true">
+            <div className="frame frame--lead" aria-hidden="true">
               <SmartImage
                 src={MEDIA.storyPhoto}
                 alt=""
@@ -113,11 +113,11 @@ export default function StoryPage() {
         <div className="container cta__inner" data-reveal>
           <h2 className="h2 h2--light">If you&apos;re ready for a clearer brand</h2>
           <p className="lede lede--light">
-            Start with a short call. No pitch. Just clarity on the next step.
+            Start with a short message. You&apos;ll get clarity on the next step.
           </p>
           <div className="cta__actions">
             <Link className="btn btn--light" href="/contact">
-              Book a Call
+              Contact
             </Link>
             <Link className="btn btn--ghostlight" href="/work">
               View work
@@ -128,4 +128,3 @@ export default function StoryPage() {
     </>
   );
 }
-

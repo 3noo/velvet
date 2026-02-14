@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { SmartImage } from "@/components/SmartImage";
+import { SocialLinks } from "@/components/SocialLinks";
 import { NAV, SITE } from "@/lib/site";
 import { Year } from "@/components/Year";
 
@@ -8,9 +10,19 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="container footer-center">
         <Link className="footer-brand" href="/">
-          <span className="footer-brand__name">{SITE.fullName}</span>
-          <span className="footer-brand__tag">{SITE.footerTagline}</span>
+          <span className="footer-brand__logo">
+            <SmartImage
+              src={SITE.logoLight}
+              alt={SITE.fullName}
+              loading="lazy"
+              sizes="180px"
+            />
+          </span>
         </Link>
+
+        <p className="footer-statement">{SITE.footerStatement}</p>
+
+        <span className="footer-brand__tag">{SITE.footerTagline}</span>
 
         <nav className="footer-nav" aria-label="Footer navigation">
           {NAV.map((item) => (
@@ -20,42 +32,14 @@ export function SiteFooter() {
           ))}
         </nav>
 
-        <div className="footer-contact" aria-label="Contact">
+        <div className="footer-contact">
           <span className="footer-contact__item">{SITE.location}</span>
-          <a
-            className="footer-contact__item"
-            href={`mailto:${SITE.email}`}
-            data-no-transition
-          >
+          <a className="footer-contact__item" href={`mailto:${SITE.email}`} data-no-transition>
             {SITE.email}
           </a>
-          {SITE.whatsappUrl ? (
-            <a
-              className="footer-contact__item"
-              href={SITE.whatsappUrl}
-              target="_blank"
-              rel="noreferrer"
-              data-no-transition
-            >
-              WhatsApp
-            </a>
-          ) : (
-            <span className="footer-contact__item">WhatsApp</span>
-          )}
-          {SITE.linkedinUrl ? (
-            <a
-              className="footer-contact__item"
-              href={SITE.linkedinUrl}
-              target="_blank"
-              rel="noreferrer"
-              data-no-transition
-            >
-              LinkedIn
-            </a>
-          ) : (
-            <span className="footer-contact__item">LinkedIn</span>
-          )}
         </div>
+
+        <SocialLinks className="footer-socials" />
 
         <p className="footer-copy">
           © <Year /> {SITE.fullName}
