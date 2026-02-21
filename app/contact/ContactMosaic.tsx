@@ -29,22 +29,37 @@ const BOTTOM = [
 ] as const;
 
 export function ContactMosaic() {
-  // Deterministic render (no randomness) to keep SSR stable.
-  const tiles = Array.from({ length: 18 }, (_, i) => ({
-    top: TOP[i % TOP.length],
-    bottom: BOTTOM[(i * 3) % BOTTOM.length]
-  }));
+  const row1 = Array.from({ length: 4 }, () => TOP).flat();
+  const row2 = Array.from({ length: 2 }, () => BOTTOM).flat();
+  const row3 = Array.from({ length: 4 }, () => TOP).flat().reverse();
 
   return (
     <div className="contact-mosaic" aria-hidden="true">
       <div className="contact-mosaic__track">
-        {tiles.map((t, i) => (
-          <div className="contact-mosaic__tile" key={i}>
-            <span className="contact-mosaic__top">{t.top}</span>
-            <span className="contact-mosaic__bottom">{t.bottom}</span>
-          </div>
-        ))}
+        <div className="mosaic-row mosaic-row--left">
+          {row1.map((txt, i) => (
+            <Tile key={`${i}-1`} text={txt} />
+          ))}
+        </div>
+        <div className="mosaic-row mosaic-row--right">
+          {row2.map((txt, i) => (
+            <Tile key={`${i}-2`} text={txt} />
+          ))}
+        </div>
+        <div className="mosaic-row mosaic-row--left">
+          {row3.map((txt, i) => (
+            <Tile key={`${i}-3`} text={txt} />
+          ))}
+        </div>
       </div>
+    </div>
+  );
+}
+
+function Tile({ text }: { text: string }) {
+  return (
+    <div className="contact-mosaic__tile">
+      <span className="contact-mosaic__top">{text}</span>
     </div>
   );
 }

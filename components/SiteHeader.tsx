@@ -30,13 +30,7 @@ export function SiteHeader() {
 
   return (
     <header className="site-header">
-      <div className="announcement-bar" aria-label="Studio announcement">
-        <div className="announcement-bar__track" aria-hidden="true">
-          <span>{SITE.announcementText}</span>
-          <span>{SITE.announcementText}</span>
-          <span>{SITE.announcementText}</span>
-        </div>
-      </div>
+
 
       <div className="container nav">
         <nav className="nav__desktop nav__desktop--left" aria-label="Primary left">

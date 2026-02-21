@@ -43,10 +43,13 @@ export function SocialLinks({ className = "" }: SocialLinksProps) {
       href: SITE.linkedinUrl,
       icon: (
         <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <rect x="3.5" y="3.5" width="17" height="17" rx="3.2" />
-          <rect x="7" y="10" width="2.2" height="7" rx="1" />
-          <circle cx="8.1" cy="7.5" r="1.3" fill="currentColor" stroke="none" />
-          <path d="M12 10v7m0-3.8c0-1.7 1-3.2 3-3.2 1.8 0 2.8 1.2 2.8 3.2V17" />
+          <rect x="4" y="4" width="4" height="4" rx="1" fill="currentColor" stroke="none" />
+          <rect x="4" y="10" width="4" height="10" rx="1" fill="currentColor" stroke="none" />
+          <path
+            d="M14 10c-2.21 0-4 1.79-4 4v6h4v-6c0-1.1.9-2 2-2s2 .9 2 2v6h4v-6c0-3.31-2.69-6-6-6z"
+            fill="currentColor"
+            stroke="none"
+          />
         </svg>
       )
     });

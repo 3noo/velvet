@@ -79,9 +79,7 @@ export default function HomePage() {
 
         <div className="container hero__content hero__content--clarion">
           <h1 className="hero__headline" data-reveal>
-            Where clarity becomes presence,
-            <br />
-            and your story learns to lead.
+            Where clarity becomes presence.
           </h1>
           <p className="hero__sub" data-reveal data-reveal-delay="1">
             For founder-led brands turning vision
@@ -114,51 +112,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 3: STUDIO SELECTIONS */}
-      <section className="section section--cream">
-        <div className="container">
-          <div className="section-head">
-            <p className="kicker" data-reveal>
-              Studio selections
-            </p>
-            <h2 className="display-xl" data-reveal data-reveal-delay="1">
-              Studio Selections
-            </h2>
-          </div>
-
-          <div className="selection-grid">
-            {STUDIO_SELECTIONS.map((item, idx) => (
-              <article
-                key={item.title}
-                className={`selection-card ${idx === 0 ? "selection-card--feature" : ""} ${
-                  idx === 1 ? "selection-card--offset" : ""
-                }`}
-                data-reveal
-                data-reveal-delay={String(idx + 1)}
-              >
-                <SmartImage
-                  src={item.src}
-                  alt={item.title}
-                  sizes="(max-width: 979px) 100vw, 40vw"
-                  maxWidth={2000}
-                />
-                <div className="selection-card__overlay">
-                  <p className="selection-card__category">{item.category}</p>
-                  <h3 className="selection-card__title">{item.title}</h3>
-                </div>
-              </article>
-            ))}
-          </div>
-
-          <div className="section-actions" data-reveal data-reveal-delay="4">
-            <Link className="cta-link" href="/work">
-              Explore projects →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 4: SERVICES TEASER */}
+      {/* SECTION 3: SERVICES TEASER (OFFERINGS) */}
       <section className="section section--dark">
         <div className="container">
           <div className="section-head section-head--center">
@@ -189,8 +143,64 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 5: MY STORY */}
+      {/* SECTION 4: STUDIO SELECTIONS */}
       <section className="section section--cream">
+        <div className="container">
+          <div className="section-head section-head--center">
+            <h2 className="display-xl" data-reveal data-reveal-delay="1">
+              Studio Selections
+            </h2>
+          </div>
+
+          <div className="selection-grid">
+            {STUDIO_SELECTIONS.map((item, idx) => (
+              <article
+                key={item.title}
+                className={`selection-card ${idx === 0 ? "selection-card--feature" : ""} ${idx === 1 ? "selection-card--offset" : ""
+                  }`}
+                data-reveal
+                data-reveal-delay={String(idx + 1)}
+              >
+                <SmartImage
+                  src={item.src}
+                  alt={item.title}
+                  sizes="(max-width: 979px) 100vw, 40vw"
+                  maxWidth={2000}
+                />
+                <div className="selection-card__overlay">
+                  <p className="selection-card__category">{item.category}</p>
+                  <h3 className="selection-card__title">{item.title}</h3>
+                </div>
+              </article>
+            ))}
+
+            <div
+              className="selection-card selection-card--cta"
+              data-reveal
+              data-reveal-delay="4"
+            >
+              <div className="selection-card__cta-content">
+                <p className="selection-card__category">Philosophy</p>
+                <h3 className="selection-card__title">
+                  Depth over noise. <em>Always.</em>
+                </h3>
+                <p className="selection-card__body">
+                  In a world of shallow metrics, we build presence that commands attention through clarity and substance.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="section-actions" data-reveal data-reveal-delay="4">
+            <Link className="cta-link" href="/work">
+              Explore projects →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 5: MY STORY */}
+      <section className="section section--sand">
         <div className="container split split--lead">
           <div className="split__media" data-reveal>
             <div className="frame frame--lead" aria-hidden="true">
@@ -253,57 +263,55 @@ export default function HomePage() {
 
       {/* SECTION 7: PORTFOLIO SHOWCASE */}
       <section className="portfolio">
-        <div className="portfolio__pin" aria-hidden="true">
-          <div className="portfolio__media">
+        <div className="portfolio__sticky-layer">
+          <div className="portfolio__bg" aria-hidden="true">
             <SmartImage
               src={MEDIA.portfolioPinnedImage}
               alt=""
               sizes="100vw"
-              loading="eager"
+              loading="lazy"
               maxWidth={2400}
             />
           </div>
-          <div className="portfolio__shade"></div>
+          <div className="portfolio__shade" aria-hidden="true"></div>
         </div>
 
-        <div className="portfolio__content-wrap">
-          <div className="container portfolio__content">
-            <h2 className="portfolio__title" data-reveal>
-              The work
-            </h2>
-            <p className="portfolio__sub" data-reveal data-reveal-delay="1">
-              Brand strategy and social content for founders who value clarity
-              over viral trends, authenticity over performance.
-            </p>
+        <div className="container portfolio__content">
+          <h2 className="portfolio__title" data-reveal>
+            The work
+          </h2>
+          <p className="portfolio__sub" data-reveal data-reveal-delay="1">
+            Brand strategy and social content for founders who value clarity
+            over viral trends, authenticity over performance.
+          </p>
 
-            <div className="portfolio__frames" data-reveal data-reveal-delay="2">
-              <div className="frame frame--wide">
-                <AutoCarousel
-                  aria-label="Portfolio carousel one"
-                  items={MEDIA.workSamples.slice(0, 7).map((src) => ({ src }))}
-                  autoplay
-                  intervalMs={6200}
-                  sizes="(max-width: 979px) 100vw, 55vw"
-                  maxWidth={1800}
-                />
-              </div>
-              <div className="frame frame--wide">
-                <AutoCarousel
-                  aria-label="Portfolio carousel two"
-                  items={MEDIA.workSamples.slice(3, 10).map((src) => ({ src }))}
-                  autoplay
-                  intervalMs={6600}
-                  sizes="(max-width: 979px) 100vw, 55vw"
-                  maxWidth={1800}
-                />
-              </div>
+          <div className="portfolio__frames" data-reveal data-reveal-delay="2">
+            <div className="frame frame--wide">
+              <AutoCarousel
+                aria-label="Portfolio carousel one"
+                items={MEDIA.workSamples.slice(0, 7).map((src) => ({ src }))}
+                autoplay
+                intervalMs={6200}
+                sizes="(max-width: 979px) 100vw, 55vw"
+                maxWidth={1800}
+              />
             </div>
+            <div className="frame frame--wide">
+              <AutoCarousel
+                aria-label="Portfolio carousel two"
+                items={MEDIA.workSamples.slice(3, 10).map((src) => ({ src }))}
+                autoplay
+                intervalMs={6600}
+                sizes="(max-width: 979px) 100vw, 55vw"
+                maxWidth={1800}
+              />
+            </div>
+          </div>
 
-            <div className="portfolio__actions" data-reveal data-reveal-delay="3">
-              <Link className="cta-link cta-link--light" href="/work">
-                View full portfolio →
-              </Link>
-            </div>
+          <div className="portfolio__actions" data-reveal data-reveal-delay="3">
+            <Link className="cta-link cta-link--light" href="/work">
+              View full portfolio →
+            </Link>
           </div>
         </div>
       </section>

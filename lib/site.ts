@@ -6,7 +6,7 @@ export const SITE = {
   faviconPng: "/img/brand/favicon.png",
   footerTagline: "Brand strategy for founder-led businesses",
   footerStatement: "For brands that choose depth over noise.",
-  announcementText: "Now booking spring brand strategy projects - Barcelona and worldwide.",
+  announcementText: "Brand strategy & social for founders.",
   email: "hello@clarion.studio",
   location: "Barcelona, Spain",
   instagramHandle: "@clarionstudio",
@@ -33,7 +33,7 @@ export const MEDIA = {
 
   // Sticky pinned media for the portfolio showcase.
   portfolioPinnedImage: u(
-    "https://images.unsplash.com/photo-1497215728101-856f4ea42174",
+    "https://images.unsplash.com/photo-1505118380757-91f5f5632de0",
     2400,
     1600
   ),

@@ -28,7 +28,7 @@ export default function WorkPage() {
           </div>
 
           <div className="split__media" data-reveal data-reveal-delay="1">
-            <div className="frame frame--lead">
+            <div className="frame frame--lead frame--short">
               <AutoCarousel
                 aria-label="Work samples"
                 items={MEDIA.workSamples.slice(0, 8).map((src) => ({ src }))}

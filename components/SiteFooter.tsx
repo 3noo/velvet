@@ -8,23 +8,26 @@ import { Year } from "@/components/Year";
 export function SiteFooter() {
   return (
     <footer className="site-footer">
-      <div className="container footer-center">
-        <Link className="footer-brand" href="/">
-          <span className="footer-brand__logo">
-            <SmartImage
-              src={SITE.logoLight}
-              alt={SITE.fullName}
-              loading="lazy"
-              sizes="180px"
-            />
-          </span>
-        </Link>
+      <div className="container footer-grid">
+        {/* Col 1: Brand (Left/Top) */}
+        <div className="footer-col footer-col--brand">
+          <Link className="footer-brand" href="/">
+            <span className="footer-brand__logo">
+              <SmartImage
+                src={SITE.logoLight}
+                alt={SITE.fullName}
+                loading="lazy"
+                sizes="180px"
+              />
+            </span>
+          </Link>
 
-        <p className="footer-statement">{SITE.footerStatement}</p>
+          <p className="footer-statement">{SITE.footerStatement}</p>
+          <SocialLinks className="footer-socials" />
+        </div>
 
-        <span className="footer-brand__tag">{SITE.footerTagline}</span>
-
-        <nav className="footer-nav" aria-label="Footer navigation">
+        {/* Col 2: Nav (Center/Middle) */}
+        <nav className="footer-col footer-col--nav footer-nav" aria-label="Footer navigation">
           {NAV.map((item) => (
             <Link key={item.href} href={item.href}>
               {item.label}
@@ -32,18 +35,20 @@ export function SiteFooter() {
           ))}
         </nav>
 
-        <div className="footer-contact">
+        {/* Col 3: Contact (Right/Bottom) */}
+        <div className="footer-col footer-col--contact footer-contact">
           <span className="footer-contact__item">{SITE.location}</span>
-          <a className="footer-contact__item" href={`mailto:${SITE.email}`} data-no-transition>
+          <a
+            className="footer-contact__item"
+            href={`mailto:${SITE.email}`}
+            data-no-transition
+          >
             {SITE.email}
           </a>
+          <p className="footer-copy">
+            © <Year /> {SITE.fullName}
+          </p>
         </div>
-
-        <SocialLinks className="footer-socials" />
-
-        <p className="footer-copy">
-          © <Year /> {SITE.fullName}
-        </p>
       </div>
     </footer>
   );

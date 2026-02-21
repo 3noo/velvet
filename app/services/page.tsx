@@ -54,7 +54,7 @@ export default function ServicesPage() {
           </div>
 
           <div className="split__media" data-reveal data-reveal-delay="1">
-            <div className="frame frame--lead" aria-hidden="true">
+            <div className="frame frame--lead frame--short" aria-hidden="true">
               <SmartImage
                 src={MEDIA.servicesPhoto}
                 alt=""
